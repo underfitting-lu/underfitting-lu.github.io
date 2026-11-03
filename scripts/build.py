@@ -1,11 +1,33 @@
 """Generate the static homepage from content.json. Python standard library only."""
 from pathlib import Path
+from datetime import date
 import html
 import json
 
 ROOT = Path(__file__).resolve().parents[1]
 data = json.loads((ROOT / 'content.json').read_text(encoding='utf-8'))
 esc = html.escape
+
+def date_label(value):
+    parts = value.split('-')
+    if len(parts) == 1:
+        return value
+    parsed = date.fromisoformat(value + ('-01' if len(parts) == 2 else ''))
+    return parsed.strftime('%b %Y') if len(parts) == 2 else f'{parsed.day} {parsed:%b %Y}'
+
+def date_range(start, end=None):
+    if not end or start == end:
+        return date_label(start)
+    first, last = date.fromisoformat(start), date.fromisoformat(end)
+    if (first.year, first.month) == (last.year, last.month):
+        return f'{first.day}–{last.day} {last:%b %Y}'
+    return f'{date_label(start)} – {date_label(end)}'
+
+def time_html(start, end=None):
+    return f'<time datetime="{start}">{esc(date_range(start, end))}</time>'
+
+def external_link(label, url):
+    return f'<a href="{esc(url, quote=True)}" target="_blank" rel="noopener noreferrer">{esc(label)} <span aria-hidden="true">↗</span></a>'
 
 def bibtex(p):
     kind = 'article' if p['status'] in ('Journal', 'Preprint') else 'inproceedings'
@@ -21,14 +43,33 @@ for i, p in enumerate(data['papers'], 1):
     links = ''.join(f'<a href="{esc(url, quote=True)}" target="_blank" rel="noopener noreferrer">{esc(label)} <span aria-hidden="true">↗</span></a>' for label, url in p['links'].items())
     primary = next(iter(p['links'].values()))
     previous = f'<details class="previous-title"><summary>Earlier title</summary><p>{esc(p["alternateTitle"])}</p></details>' if p.get('alternateTitle') else ''
+    dates = ''.join(f'<span>{esc(d["label"])} · <a href="{esc(d["source"], quote=True)}" target="_blank" rel="noopener noreferrer">{time_html(d["start"], d.get("end"))}</a></span>' for d in p['dates'])
+    status = f'Accepted · {p["status"]}' if p.get('accepted') else p['status']
+    issue = f'<span>{esc(p["bibliographicDetails"])}</span>' if p.get('bibliographicDetails') else ''
     papers.append(f'''<article class="publication" id="paper-{p['id']}" data-topics="{' '.join(p['topics'])}">
       <span class="pub-number" aria-hidden="true">{i:02d}</span><div>
       <div class="pub-heading"><h3 class="pub-title"><a href="{esc(primary, quote=True)}" target="_blank" rel="noopener noreferrer">{esc(p['title'])}</a></h3></div>
-      <div class="pub-meta"><span class="venue">{esc(p['venue'])}</span><span>· {p['year']}</span><span class="status status-{p['status'].lower().replace(' ', '-')}">{esc(p['status'])}</span></div>
+      <div class="pub-meta"><span class="venue">{esc(p['venue'])}</span><span>· {p['year']}</span><span class="status status-{p['status'].lower().replace(' ', '-')}">{esc(status)}</span>{issue}</div>
+      <div class="pub-dates">{dates}</div>
       <p class="pub-authors">{authors}</p><p class="pub-summary">{esc(p['summary'])}</p>
       <div class="pub-links">{links}<button class="cite-button js-only" data-cite="{p['id']}" aria-label="Cite {esc(p['short'], quote=True)}">BibTeX</button></div>{previous}</div>
       </article>''')
     citations.append(f'<script type="text/plain" id="bib-{p["id"]}">{bibtex(p)}</script>')
+
+upcoming = []
+for item in data['upcoming']:
+    upcoming.append(f'''<article class="upcoming-card"><div class="upcoming-meta"><span class="status">{esc(item['category'])}</span>{time_html(item['start'], item['end'])}</div><h3><a href="#paper-{item['paper']}">{esc(item['name'])} <span aria-hidden="true">↗</span></a></h3><p>{esc(item['location'])} · {external_link('Conference dates', item['source'])}</p></article>''')
+
+milestones = []
+for item in data['milestones']:
+    links = ''.join(external_link(label, url) for label, url in item['links'].items())
+    milestones.append(f'''<li class="milestone"><div class="milestone-date">{time_html(item['start'], item.get('end'))}</div><div><span class="milestone-type">{esc(item['type'])}</span><h3>{esc(item['title'])}</h3><p>{esc(item['text'])}</p><div class="milestone-links">{links}</div></div></li>''')
+timeline = '<ol class="milestone-list">' + ''.join(milestones[:4]) + '</ol>'
+timeline += f'<details class="earlier-milestones"><summary>Earlier milestones <span aria-hidden="true">({len(milestones) - 4})</span></summary><ol class="milestone-list">' + ''.join(milestones[4:]) + '</ol></details>'
+awards = []
+for award in data['awards']:
+    event = external_link(award['event'], award['source']) if award.get('source') else esc(award['event'])
+    awards.append(f'<li><span class="award-year">{time_html(award["date"], award.get("end"))}</span><span><strong>{esc(award["title"])}</strong><br>{event}</span></li>')
 
 schema = {"@context": "https://schema.org", "@type": "Person", "name": data['name'], "alternateName": data['chineseName'], "url": "https://underfitting-lu.github.io/", "image": "https://underfitting-lu.github.io/assets/profile.jpg", "email": data['email'], "affiliation": {"@type": "CollegeOrUniversity", "name": "Nanjing University of Posts and Telecommunications"}, "sameAs": [data['github'], data['scholar']], "knowsAbout": ["AI Agents", "Speech", "Perception", "Machine Learning", "Large Language Models", "Representation Learning"]}
 
@@ -51,7 +92,7 @@ page = '''<!doctype html>
 <a class="skip-link" href="#main">Skip to content</a>
 <header class="site-header"><div class="wrap header-inner">
   <a class="wordmark" href="#top" aria-label="Zijian Lu, back to top"><span class="wordmark-mark" aria-hidden="true">z.</span> Zijian Lu</a>
-  <nav aria-label="Main navigation"><a href="#research">Research</a><a href="#publications">Publications</a><a href="#building">Building</a><a href="#about">About</a><a href="assets/Zijian_Lu_CV.pdf" target="_blank" rel="noopener">CV ↗</a><button class="theme-button js-only" id="theme-toggle" aria-label="Switch to dark theme">◐</button></nav>
+  <nav aria-label="Main navigation"><a href="#news">News</a><a href="#research">Research</a><a href="#publications">Papers</a><a href="#building">Building</a><a href="#about">About</a><a href="assets/Zijian_Lu_CV.pdf" target="_blank" rel="noopener">CV ↗</a><button class="theme-button js-only" id="theme-toggle" aria-label="Switch to dark theme">◐</button></nav>
 </div></header>
 <main id="main" class="wrap">
 <section class="hero" id="top" aria-labelledby="hero-title">
@@ -65,6 +106,13 @@ page = '''<!doctype html>
   <div class="portrait-block"><img class="portrait" src="assets/profile.jpg" alt="Portrait of Zijian Lu" width="600" height="750" fetchpriority="high"><div class="portrait-caption"><span>陆梓健 / ZIJIAN LU</span><span>NANJING, CN</span></div></div>
 </section>
 <div class="foundation"><span class="foundation-label">The foundation</span><div class="foundation-values"><span>Machine Learning</span><span>Large Language Models</span><span>Representation Learning</span></div></div>
+
+<section class="section news-section" id="news" aria-labelledby="news-title">
+  <div class="section-heading"><div><div class="section-kicker">News &amp; milestones / 2026</div><h2 id="news-title">Research meets the world.</h2></div><p class="section-description">Papers, project milestones, and the people around them.</p></div>
+  <div class="upcoming-label"><span>Next conferences</span><span>As of __UPDATED__</span></div>
+  <div class="upcoming-grid">__UPCOMING__</div>
+  __TIMELINE__
+</section>
 
 <section class="section" id="research" aria-labelledby="research-title">
   <div class="section-heading"><div><div class="section-kicker">01 / Research</div><h2 id="research-title">Three lenses. Shared foundations.</h2></div><p class="section-description">From representations to reasoning, and from observations to real-world systems.</p></div>
@@ -88,7 +136,7 @@ page = '''<!doctype html>
 
 <section class="section" id="building" aria-labelledby="building-title">
   <div class="section-heading"><div><div class="section-kicker">03 / From research to practice</div><h2 id="building-title">Building beyond the paper.</h2></div><p class="section-description">Systems become more interesting when people actually use them.</p></div>
-  <div class="venture"><img class="venture-image" src="assets/forget-me-not.jpg" alt="The Forget-Me-Not project demonstrated at a public technology exhibition" width="1000" height="750" loading="lazy"><div><div class="venture-role">Co-founder &amp; Algorithm Lead · Shouyi Technology</div><h3>Forget-Me-Not <span lang="zh-CN">勿忘我</span></h3><p>A voice-based cognitive screening project for older adults. We connect familiar telephone conversations with speech and language modeling, conversational agents, and cognitive-risk reporting.</p><p>I work on the algorithms and the path from research prototypes to community and hospital pilots—where dialects, noise, data quality, and uncertainty become very real.</p><div class="project-coverage">Project coverage · People's Daily Overseas Edition<a href="https://paper.people.com.cn/rmrbhwb/pad/content/202608/03/content_30172676.html" target="_blank" rel="noopener noreferrer" lang="zh-CN">让“手搓”不“受挫” <span aria-hidden="true">↗</span></a></div></div></div>
+  <div class="venture"><img class="venture-image" src="assets/forget-me-not.jpg" alt="The Forget-Me-Not project demonstrated at a public technology exhibition" width="1000" height="750" loading="lazy"><div><div class="venture-role">Co-founder &amp; Algorithm Lead · Shouyi Technology<br><span class="venture-date">Company established May 2026</span></div><h3>Forget-Me-Not <span lang="zh-CN">勿忘我</span></h3><p>A voice-based cognitive screening project for older adults. We connect familiar telephone conversations with speech and language modeling, conversational agents, and cognitive-risk reporting.</p><p>I work on the algorithms and the path from research prototypes to community and hospital pilots—where dialects, noise, data quality, and uncertainty become very real.</p><div class="project-coverage">Project coverage · People's Daily Overseas Edition · 3 Aug 2026<a href="https://paper.people.com.cn/rmrbhwb/pad/content/202608/03/content_30172676.html" target="_blank" rel="noopener noreferrer" lang="zh-CN">让“手搓”不“受挫” <span aria-hidden="true">↗</span></a></div></div></div>
 </section>
 
 <section class="section" id="open-source" aria-labelledby="open-source-title">
@@ -98,23 +146,25 @@ page = '''<!doctype html>
 
 <section class="section" id="field-notes" aria-labelledby="field-title">
   <div class="section-heading"><div><div class="section-kicker">05 / Out of the lab</div><h2 id="field-title">Conversations in the real world.</h2></div><p class="section-description">Presenting ideas, meeting collaborators, and learning from the room.</p></div>
-  <div class="field-grid"><figure><img src="assets/cscwd.jpg" alt="Zijian Lu presenting research at IEEE CSCWD 2026" loading="lazy" width="1000" height="625"><figcaption><strong>Sharing the work</strong><span>IEEE CSCWD · 2026</span></figcaption></figure><figure><img src="assets/ubicomp.jpg" alt="Conference photograph at UbiComp and ISWC 2026" loading="lazy" width="1000" height="625"><figcaption><strong>Ideas meet the community</strong><span>UbiComp / ISWC · 2026</span></figcaption></figure></div>
+  <div class="field-grid"><figure><img src="assets/cscwd.jpg" alt="Zijian Lu presenting research at IEEE CSCWD 2026" loading="lazy" width="1000" height="625"><figcaption><strong>Sharing the work</strong><span>IEEE CSCWD · Fuzhou<br>Conference: <a href="https://fyust.edu.cn/gjhyqk/cscwd2026/" target="_blank" rel="noopener noreferrer">13–15 May 2026 ↗</a></span></figcaption></figure><figure><img src="assets/ubicomp.jpg" alt="Conference photograph at UbiComp and ISWC 2026" loading="lazy" width="1000" height="625"><figcaption><strong>Ideas meet the community</strong><span>UbiComp / ISWC · Shanghai<br>Conference: <a href="https://ubicomp.org/ubicomp-iswc-2026/iswc-cfp/" target="_blank" rel="noopener noreferrer">11–15 Oct 2026 ↗</a></span></figcaption></figure></div>
 </section>
 
 <section class="section" id="about" aria-labelledby="about-title">
   <div class="section-heading"><div><div class="section-kicker">06 / A little background</div><h2 id="about-title">Learning, building, repeating.</h2></div></div>
-  <div class="about-grid"><div class="education-item"><span class="date">2024 — PRESENT · EXPECTED 2028</span><h3>Nanjing University of Posts and Telecommunications</h3><p>B.Eng. candidate, Communication Engineering<br>School of Communication and Information Engineering</p></div><ul class="awards" aria-label="Selected honors"><li><span class="award-year">2026</span><span><strong>Gold Award</strong><br>Alibaba Cloud hackathon</span></li><li><span class="award-year">2026</span><span><strong>National Third Prize</strong><br>China Software Cup</span></li><li><span class="award-year">2026</span><span><strong>National Third Prize · Maker Track</strong><br>China College Students Service Outsourcing Competition</span></li><li><span class="award-year">2026</span><span><strong>Bronze Award</strong><br>NJUPT Challenge Cup Entrepreneurship Competition</span></li><li><span class="award-year">2026</span><span><strong>Second-Class University Scholarship</strong><br>Nanjing University of Posts and Telecommunications</span></li></ul></div>
+  <div class="about-grid"><div><div class="education-item"><span class="date">SEP 2024 — PRESENT · EXPECTED 2028</span><h3>Nanjing University of Posts and Telecommunications</h3><p>B.Eng. candidate, Communication Engineering<br>School of Communication and Information Engineering</p></div><div class="research-community"><span class="eyebrow">Research community · Current</span><h3>MICS Lab / Xindu team</h3><p>Undergraduate member of the Multimodal Intelligent Communication and Sensing group at NJUPT. I am also the contact for the team’s speech-track research recruitment.</p><div class="milestone-links"><a href="https://www.njupt-mics.cn/" target="_blank" rel="noopener noreferrer">Group ↗</a><a href="https://www.njupt-mics.cn/join/medeng/voice" target="_blank" rel="noopener noreferrer">Speech research challenges ↗</a></div></div></div><ul class="awards" aria-label="Selected honors">__AWARDS__</ul></div>
   <div class="scholar-strip"><div><a class="text-link" href="https://scholar.google.com/citations?user=92y6JNMAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a><p>Snapshot · 3 November 2026</p></div><div class="scholar-stats"><span class="scholar-stat"><b>21</b>citations</span><span class="scholar-stat"><b>2</b>h-index</span><span class="scholar-stat"><b>1</b>i10-index</span></div></div>
 </section>
 
 <section class="contact" id="contact" aria-labelledby="contact-title"><div class="contact-top"><div><div class="section-kicker">Say hello</div><h2 id="contact-title">A good conversation starts somewhere.</h2><p>Interested in agents, speech, perception, or the representations underneath? I would be glad to exchange ideas.</p></div><a class="email-link" href="mailto:b24011519@njupt.edu.cn">b24011519@njupt.edu.cn <span aria-hidden="true">↗</span></a></div></section>
 </main>
-<footer class="wrap"><div class="footer"><span>© 2026 Zijian Lu · Last updated November 2026</span><div class="footer-links"><a href="https://github.com/underfitting-lu/underfitting-lu.github.io" target="_blank" rel="noopener noreferrer">Source ↗</a><a href="#top">Back to top ↑</a></div></div></footer>
+<footer class="wrap"><div class="footer"><span>© 2026 Zijian Lu · Last updated __UPDATED__</span><div class="footer-links"><a href="https://github.com/underfitting-lu/underfitting-lu.github.io" target="_blank" rel="noopener noreferrer">Source ↗</a><a href="#top">Back to top ↑</a></div></div></footer>
 <dialog class="citation-dialog" id="citation-dialog" aria-labelledby="citation-title"><div class="dialog-heading"><h2 id="citation-title">Cite this work</h2><button class="dialog-close" id="close-citation" aria-label="Close citation dialog">×</button></div><pre id="citation-text" tabindex="0"></pre><button class="copy-button" id="copy-citation">Copy BibTeX</button><span class="copy-status" id="copy-status" role="status" aria-live="polite"></span></dialog>
 __CITATIONS__
 </body></html>
 '''
 page = page.replace('__SCHEMA__', json.dumps(schema, ensure_ascii=False)).replace('__PAPERS__', '\n'.join(papers)).replace('__CITATIONS__', '\n'.join(citations))
+page = page.replace('__UPCOMING__', ''.join(upcoming)).replace('__TIMELINE__', timeline).replace('__AWARDS__', ''.join(awards)).replace('__UPDATED__', date_label(data['updated']))
 (ROOT / 'index.html').write_text(page, encoding='utf-8')
 (ROOT / 'publications.bib').write_text('\n\n'.join(bibtex(p) for p in data['papers']) + '\n', encoding='utf-8')
+(ROOT / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://underfitting-lu.github.io/</loc><lastmod>{data["updated"]}</lastmod></url></urlset>\n', encoding='utf-8')
 print(f'Built {ROOT / "index.html"} with {len(papers)} works.')

@@ -27,7 +27,7 @@ document.addEventListener('keydown',e=>{if(e.key==='/'&&!['INPUT','TEXTAREA'].in
 const dialog=document.querySelector('#citation-dialog');
 const citationText=document.querySelector('#citation-text');
 const copyStatus=document.querySelector('#copy-status');
-document.querySelectorAll('.cite-button').forEach(button=>button.addEventListener('click',()=>{citationText.textContent=document.querySelector('#bib-'+button.dataset.cite).textContent.trim();copyStatus.textContent='';dialog.showModal();}));
+document.querySelectorAll('.cite-button[data-cite]').forEach(button=>button.addEventListener('click',()=>{citationText.textContent=document.querySelector('#bib-'+button.dataset.cite).textContent.trim();copyStatus.textContent='';dialog.showModal();}));
 document.querySelector('#close-citation').addEventListener('click',()=>dialog.close());
 dialog.addEventListener('click',e=>{if(e.target===dialog){const r=dialog.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)dialog.close();}});
 document.querySelector('#copy-citation').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(citationText.textContent);copyStatus.textContent='Copied.';}catch{const selection=getSelection(),range=document.createRange();range.selectNodeContents(citationText);selection.removeAllRanges();selection.addRange(range);copyStatus.textContent='Select the text, then press Ctrl/Cmd+C.';}});

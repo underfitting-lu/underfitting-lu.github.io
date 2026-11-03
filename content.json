@@ -4,86 +4,463 @@
   "email": "b24011519@njupt.edu.cn",
   "scholar": "https://scholar.google.com/citations?user=92y6JNMAAAAJ&hl=en",
   "github": "https://github.com/underfitting-lu",
-  "updated": "2026-11-03",
-  "scholarSnapshot": {"citations": 21, "hIndex": 2, "i10Index": 1},
+  "updated": "2026-11-04",
+  "scholarSnapshot": {
+    "citations": 21,
+    "hIndex": 2,
+    "i10Index": 1
+  },
   "papers": [
     {
       "id": "contractskill",
       "short": "ContractSkill",
       "title": "ContractSkill: Repairable Contract-Based Skills for Multimodal Web Agents",
-      "authors": ["Zijian Lu", "Yiping Zuo", "Yupeng Nie", "Xin He", "Weibei Fan", "Lianyong Qi", "Shi Jin"],
-      "venue": "ACM Multimedia", "year": 2026, "status": "Poster", "topics": ["agent"],
+      "authors": [
+        "Zijian Lu",
+        "Yiping Zuo",
+        "Yupeng Nie",
+        "Xin He",
+        "Weibei Fan",
+        "Lianyong Qi",
+        "Shi Jin"
+      ],
+      "venue": "ACM Multimedia",
+      "year": 2026,
+      "status": "Poster",
+      "topics": [
+        "agent"
+      ],
       "summary": "Making model-generated skills executable, verifiable, and locally repairable for multimodal web agents.",
-      "links": {"Paper": "https://doi.org/10.1145/3767308.3836465", "Code": "https://github.com/underfitting-lu/contractskill"},
-      "featured": true
+      "links": {
+        "Paper": "https://arxiv.org/abs/2603.20340",
+        "Code": "https://github.com/underfitting-lu/contractskill"
+      },
+      "featured": true,
+      "dates": [
+        {
+          "label": "First arXiv submission",
+          "start": "2026-03-20",
+          "source": "https://arxiv.org/abs/2603.20340"
+        },
+        {
+          "label": "Conference dates",
+          "start": "2026-11-10",
+          "end": "2026-11-14",
+          "source": "https://www.acmmm.org/2026/"
+        }
+      ],
+      "accepted": true
     },
     {
       "id": "speech-screening",
       "short": "Cross-corpus speech screening",
       "title": "Why Alzheimer's Speech Screening Fails to Generalize: Bridging the Deployment Gap via Cross-Corpus Evidence Anchoring",
-      "authors": ["Zijian Lu", "Sizhe Liu", "Yin Zhang", "Jixuan Deng", "Xinrong Lin", "Xinchen Yuan", "Chicheng Jin", "Yiping Zuo", "Yuanchao Li"],
-      "venue": "NCMMSC", "year": 2026, "status": "Oral", "topics": ["speech"],
+      "authors": [
+        "Zijian Lu",
+        "Sizhe Liu",
+        "Yin Zhang",
+        "Jixuan Deng",
+        "Xinrong Lin",
+        "Xinchen Yuan",
+        "Chicheng Jin",
+        "Yiping Zuo",
+        "Yuanchao Li"
+      ],
+      "venue": "NCMMSC",
+      "year": 2026,
+      "status": "Oral",
+      "topics": [
+        "speech"
+      ],
       "summary": "Auditing speech and language markers across English and Mandarin corpora, then anchoring screening models in transferable evidence.",
-      "links": {"Paper": "https://arxiv.org/abs/2609.31293"}, "featured": true
+      "links": {
+        "Paper": "https://arxiv.org/abs/2609.31293"
+      },
+      "featured": true,
+      "dates": [
+        {
+          "label": "First arXiv submission",
+          "start": "2026-09-25",
+          "source": "https://arxiv.org/abs/2609.31293"
+        },
+        {
+          "label": "Conference dates",
+          "start": "2026-11-05",
+          "end": "2026-11-08",
+          "source": "https://ccf.org.cn/NCMMSC2026"
+        }
+      ],
+      "accepted": true
     },
     {
       "id": "supersensedoctor",
       "short": "SuperSenseDoctor",
       "title": "SuperSenseDoctor: A Multimodal and Contactless Agent for Health Tracking",
-      "authors": ["Xuwen Zhang", "Zijian Lu", "Yicheng Lei", "Rui Qiu", "Jiale Li", "Yiping Zuo", "Weibei Fan", "Fu Xiao"],
-      "venue": "UbiComp / ISWC", "year": 2026, "status": "Student Challenge", "topics": ["perception", "agent"],
+      "authors": [
+        "Xuwen Zhang",
+        "Zijian Lu",
+        "Yicheng Lei",
+        "Rui Qiu",
+        "Jiale Li",
+        "Yiping Zuo",
+        "Weibei Fan",
+        "Fu Xiao"
+      ],
+      "venue": "UbiComp / ISWC",
+      "year": 2026,
+      "status": "Student Challenge",
+      "topics": [
+        "perception",
+        "agent"
+      ],
       "summary": "Connecting contactless WiFi, radar, and thermal observations to a persistent health state and traceable care-support decisions. My focus: sensing algorithms and multimodal fusion.",
-      "links": {"Paper": "https://arxiv.org/abs/2609.16257"}, "featured": true
+      "links": {
+        "Paper": "https://arxiv.org/abs/2609.16257"
+      },
+      "featured": true,
+      "dates": [
+        {
+          "label": "First arXiv submission",
+          "start": "2026-08-27",
+          "source": "https://arxiv.org/abs/2609.16257"
+        },
+        {
+          "label": "Conference dates",
+          "start": "2026-10-11",
+          "end": "2026-10-15",
+          "source": "https://ubicomp.org/ubicomp-iswc-2026/iswc-cfp/"
+        }
+      ],
+      "accepted": false
     },
     {
-      "id": "vital-rag", "short": "VITAL-RAG",
+      "id": "vital-rag",
+      "short": "VITAL-RAG",
       "title": "VITAL-RAG: Invariance Race for Context Allocation in Coding Agents",
-      "authors": ["Zijian Lu", "Yonghua Lu", "Mingcai Chen", "Yiping Zuo", "Xin He", "Weijun Wang", "Weibei Fan"],
-      "venue": "arXiv:2607.26937", "year": 2026, "status": "Preprint", "topics": ["agent"],
+      "authors": [
+        "Zijian Lu",
+        "Yonghua Lu",
+        "Mingcai Chen",
+        "Yiping Zuo",
+        "Xin He",
+        "Weijun Wang",
+        "Weibei Fan"
+      ],
+      "venue": "arXiv:2607.26937",
+      "year": 2026,
+      "status": "Preprint",
+      "topics": [
+        "agent"
+      ],
       "summary": "Allocating a coding agent's context by canonical code objects while retaining fragments that add useful local semantics.",
-      "links": {"Paper": "https://arxiv.org/abs/2607.26937"}
+      "links": {
+        "Paper": "https://arxiv.org/abs/2607.26937"
+      },
+      "dates": [
+        {
+          "label": "First arXiv submission",
+          "start": "2026-07-29",
+          "source": "https://arxiv.org/abs/2607.26937"
+        }
+      ]
     },
     {
-      "id": "wirelessopsagent", "short": "WirelessOpsAgent",
+      "id": "wirelessopsagent",
+      "short": "WirelessOpsAgent",
       "title": "WirelessOpsAgent: A Benchmark and Agent Design for Action Assurance in Wireless Networks",
-      "authors": ["Zijian Lu", "Yiping Zuo", "Hao Xu", "Weicong Chen", "Xin He", "Jiajia Guo", "Shi Jin"],
-      "venue": "arXiv:2608.08277", "year": 2026, "status": "Preprint", "topics": ["agent"],
+      "authors": [
+        "Zijian Lu",
+        "Yiping Zuo",
+        "Hao Xu",
+        "Weicong Chen",
+        "Xin He",
+        "Jiajia Guo",
+        "Shi Jin"
+      ],
+      "venue": "arXiv:2608.08277",
+      "year": 2026,
+      "status": "Preprint",
+      "topics": [
+        "agent"
+      ],
       "summary": "Checking whether current telemetry still supports a proposed wireless-network action before it is executed.",
-      "links": {"Paper": "https://arxiv.org/abs/2608.08277"}
+      "links": {
+        "Paper": "https://arxiv.org/abs/2608.08277"
+      },
+      "dates": [
+        {
+          "label": "First arXiv submission",
+          "start": "2026-08-08",
+          "source": "https://arxiv.org/abs/2608.08277"
+        }
+      ]
     },
     {
-      "id": "prior-directions", "short": "Prior Directions",
+      "id": "prior-directions",
+      "short": "Prior Directions",
       "title": "Prior Directions: Separating Geometric Identification from Behavioral Efficacy in Visual Revision",
       "alternateTitle": "Prior Directions: Why GUI Grounding Gets Locked in the Past",
-      "authors": ["Weile Gong", "Zijian Lu", "Mingcai Chen", "Yiping Zuo", "Xin He", "Weibei Fan"],
-      "venue": "arXiv:2607.26913", "year": 2026, "status": "Preprint", "topics": ["perception"],
+      "authors": [
+        "Weile Gong",
+        "Zijian Lu",
+        "Mingcai Chen",
+        "Yiping Zuo",
+        "Xin He",
+        "Weibei Fan"
+      ],
+      "venue": "arXiv:2607.26913",
+      "year": 2026,
+      "status": "Preprint",
+      "topics": [
+        "perception"
+      ],
       "summary": "Studying how stale verbal priors shape visual representations, and separating identifiable subspaces from effective behavioral interventions.",
-      "links": {"Paper": "https://arxiv.org/abs/2607.26913"}
+      "links": {
+        "Paper": "https://arxiv.org/abs/2607.26913"
+      },
+      "dates": [
+        {
+          "label": "First arXiv submission",
+          "start": "2026-07-29",
+          "source": "https://arxiv.org/abs/2607.26913"
+        }
+      ]
     },
     {
-      "id": "geometric-risk", "short": "Geometric Risk Control",
+      "id": "geometric-risk",
+      "short": "Geometric Risk Control",
       "title": "Geometric Risk Control for Vision-Language Model OCR",
       "alternateTitle": "From Plausibility to Verifiability: Risk-Controlled Generative OCR with Vision-Language Models",
-      "authors": ["Weile Gong", "Zijian Lu", "Mingcai Chen", "Yiping Zuo", "Xin He", "Weibei Fan"],
-      "venue": "arXiv:2603.19790", "year": 2026, "status": "Preprint", "topics": ["perception"],
+      "authors": [
+        "Weile Gong",
+        "Zijian Lu",
+        "Mingcai Chen",
+        "Yiping Zuo",
+        "Xin He",
+        "Weibei Fan"
+      ],
+      "venue": "arXiv:2603.19790",
+      "year": 2026,
+      "status": "Preprint",
+      "topics": [
+        "perception"
+      ],
       "summary": "Using repeatable geometric probes and cross-view evidence to control which OCR outputs a vision-language model releases.",
-      "links": {"Paper": "https://arxiv.org/abs/2603.19790"}
+      "links": {
+        "Paper": "https://arxiv.org/abs/2603.19790"
+      },
+      "dates": [
+        {
+          "label": "First arXiv submission",
+          "start": "2026-03-20",
+          "source": "https://arxiv.org/abs/2603.19790"
+        }
+      ]
     },
     {
-      "id": "drone-isac", "short": "Fluid Antenna ISAC",
+      "id": "drone-isac",
+      "short": "Fluid Antenna ISAC",
       "title": "Fluid Antenna-Aided ISAC for Urban Drone Delivery: System Design, Edge Realization, and Evaluation",
-      "authors": ["Zijian Lu", "Yiping Zuo", "Zihui Shu", "Weicong Chen", "Ning Gao", "Chen Dai", "Weibei Fan"],
-      "venue": "IEEE Internet of Things Magazine", "year": 2026, "status": "Journal", "topics": ["perception"],
+      "authors": [
+        "Zijian Lu",
+        "Yiping Zuo",
+        "Zihui Shu",
+        "Weicong Chen",
+        "Ning Gao",
+        "Chen Dai",
+        "Weibei Fan"
+      ],
+      "venue": "IEEE Internet of Things Magazine",
+      "year": 2026,
+      "status": "Journal",
+      "topics": [
+        "perception"
+      ],
       "summary": "Bringing integrated sensing and communication into urban drone-delivery system design and edge realization.",
-      "links": {"Scholar": "https://scholar.google.com/citations?view_op=view_citation&user=92y6JNMAAAAJ&citation_for_view=92y6JNMAAAAJ:u-x6o8ySG0sC"}
+      "links": {
+        "Paper": "https://doi.org/10.1109/MIOT.2025.3644435"
+      },
+      "bibliographicDetails": "Vol. 9, no. 3, pp. 81–86",
+      "dates": [
+        {
+          "label": "Issue date",
+          "start": "2026-05",
+          "source": "https://api.crossref.org/works/10.1109/MIOT.2025.3644435"
+        }
+      ]
     },
     {
-      "id": "secure-isac", "short": "Secure UAV ISAC",
+      "id": "secure-isac",
+      "short": "Secure UAV ISAC",
       "title": "Secrecy Rate Maximization for Fluid Antenna-aided ISAC System with UAVs",
-      "authors": ["Zijian Lu", "Yiping Zuo", "Xin He", "Lei Wang", "Weicong Chen", "Chen Dai", "Weibei Fan"],
-      "venue": "IEEE CSCWD", "year": 2026, "status": "Conference", "topics": ["perception"],
+      "authors": [
+        "Zijian Lu",
+        "Yiping Zuo",
+        "Xin He",
+        "Lei Wang",
+        "Weicong Chen",
+        "Chen Dai",
+        "Weibei Fan"
+      ],
+      "venue": "IEEE CSCWD",
+      "year": 2026,
+      "status": "Conference",
+      "topics": [
+        "perception"
+      ],
       "summary": "Jointly optimizing beamforming, antenna positions, and artificial-noise power for secure UAV sensing and communication.",
-      "links": {"Scholar": "https://scholar.google.com/citations?view_op=view_citation&user=92y6JNMAAAAJ&citation_for_view=92y6JNMAAAAJ:9yKSN-GCB0IC"}
+      "links": {
+        "Paper": "https://doi.org/10.1109/CSCWD68734.2026.11582777"
+      },
+      "dates": [
+        {
+          "label": "Proceedings date",
+          "start": "2026-05-13",
+          "source": "https://api.crossref.org/works/10.1109/CSCWD68734.2026.11582777"
+        },
+        {
+          "label": "Conference dates",
+          "start": "2026-05-13",
+          "end": "2026-05-15",
+          "source": "https://fyust.edu.cn/gjhyqk/cscwd2026/"
+        }
+      ],
+      "accepted": false
+    }
+  ],
+  "upcoming": [
+    {
+      "start": "2026-11-05",
+      "end": "2026-11-08",
+      "name": "NCMMSC 2026",
+      "category": "Accepted · Oral",
+      "paper": "speech-screening",
+      "location": "Hengqin, Zhuhai",
+      "source": "https://ccf.org.cn/NCMMSC2026"
+    },
+    {
+      "start": "2026-11-10",
+      "end": "2026-11-14",
+      "name": "ACM Multimedia 2026",
+      "category": "Accepted · Poster",
+      "paper": "contractskill",
+      "location": "Rio de Janeiro",
+      "source": "https://www.acmmm.org/2026/"
+    }
+  ],
+  "milestones": [
+    {
+      "start": "2026-10-11",
+      "end": "2026-10-15",
+      "type": "Conference dates",
+      "title": "SuperSenseDoctor at UbiComp / ISWC",
+      "text": "Student Challenge research on contactless health tracking. My contribution: sensing algorithms and multimodal fusion.",
+      "links": {
+        "Paper": "https://arxiv.org/abs/2609.16257",
+        "Conference": "https://ubicomp.org/ubicomp-iswc-2026/iswc-cfp/"
+      }
+    },
+    {
+      "start": "2026-08-03",
+      "type": "Project coverage",
+      "title": "Featured in People’s Daily Overseas Edition",
+      "text": "The report follows our team’s path from a student project to a Nanjing company and community implementation.",
+      "links": {
+        "Read feature": "https://paper.people.com.cn/rmrbhwb/pad/content/202608/03/content_30172676.html"
+      }
+    },
+    {
+      "start": "2026-07-02",
+      "end": "2026-07-03",
+      "type": "Team award · Competition dates",
+      "title": "First Prize · Xuhui OPC Special Competition",
+      "text": "Our project won the Enterprise Group First Prize at the OPC Special Competition of the 6th Hai Ju Ying Cai Global Innovation and Entrepreneurship Competition in Shanghai.",
+      "links": {
+        "Award report": "https://new.sh-italent.com/Article/202607/202607100006.shtml"
+      }
+    },
+    {
+      "start": "2026-06-11",
+      "type": "Team coverage",
+      "title": "An interdisciplinary team, featured by Jianye",
+      "text": "Jianye District Government featured Forget-Me-Not and named me among the project’s interdisciplinary team members.",
+      "links": {
+        "Read feature": "https://www.njjy.gov.cn/jyyw/202606/t20260611_5856433.html"
+      }
+    },
+    {
+      "start": "2026-05-13",
+      "end": "2026-05-15",
+      "type": "Conference dates",
+      "title": "Sharing secure UAV ISAC research at IEEE CSCWD",
+      "text": "Research on secrecy-rate optimization for fluid-antenna sensing and communication systems with UAVs, in Fuzhou.",
+      "links": {
+        "Paper": "https://doi.org/10.1109/CSCWD68734.2026.11582777",
+        "Conference": "https://fyust.edu.cn/gjhyqk/cscwd2026/"
+      }
+    },
+    {
+      "start": "2026-05",
+      "type": "Community pilot",
+      "title": "Speech AI reaches a community health center",
+      "text": "Our team began a cognitive-screening pilot at Haixiacheng Community Health Service Center in Nanjing, using familiar telephone conversations.",
+      "links": {
+        "Pilot report · 22 May": "https://www.njjy.gov.cn/jyyw/202605/t20260522_5844613.html"
+      }
+    },
+    {
+      "start": "2026-05",
+      "type": "Company milestone",
+      "title": "Establishing Shouyi Technology in Nanjing",
+      "text": "Our team established its company and joined the Qincheng OPC community in Jianye, taking Forget-Me-Not beyond the prototype.",
+      "links": {
+        "Project story": "https://paper.people.com.cn/rmrbhwb/pad/content/202608/03/content_30172676.html"
+      }
+    },
+    {
+      "start": "2026-03-21",
+      "type": "Team award",
+      "title": "Gold · ModelScope AI Hackathon Tour national final",
+      "text": "Forget-Me-Not won Gold in the public-interest track at the 2026 national final in Nanjing.",
+      "links": {
+        "Award report": "https://news.ustc.edu.cn/info/1056/94363.htm",
+        "Track details": "https://www.njjy.gov.cn/jyyw/202605/t20260515_5841000.html"
+      }
+    }
+  ],
+  "awards": [
+    {
+      "date": "2026-08",
+      "title": "National Third Prize",
+      "event": "China Software Cup"
+    },
+    {
+      "date": "2026-07",
+      "title": "National Third Prize · Maker Track",
+      "event": "China College Students Service Outsourcing Innovation and Entrepreneurship Competition"
+    },
+    {
+      "date": "2026-07-02",
+      "end": "2026-07-03",
+      "title": "Enterprise Group First Prize · Team",
+      "event": "Hai Ju Ying Cai / Xuhui OPC Special Competition",
+      "source": "https://new.sh-italent.com/Article/202607/202607100006.shtml"
+    },
+    {
+      "date": "2026-05",
+      "title": "Bronze Award",
+      "event": "NJUPT Challenge Cup Entrepreneurship Competition"
+    },
+    {
+      "date": "2026-03-21",
+      "title": "Public-Interest Track Gold · Team",
+      "event": "ModelScope AI Hackathon Tour national final",
+      "source": "https://www.njjy.gov.cn/jyyw/202605/t20260515_5841000.html"
+    },
+    {
+      "date": "2026",
+      "title": "Second-Class University Scholarship",
+      "event": "Nanjing University of Posts and Telecommunications"
     }
   ]
 }
