@@ -26,8 +26,12 @@ def date_range(start, end=None):
 def time_html(start, end=None):
     return f'<time datetime="{start}">{esc(date_range(start, end))}</time>'
 
-def external_link(label, url):
-    return f'<a href="{esc(url, quote=True)}" target="_blank" rel="noopener noreferrer">{esc(label)} <span aria-hidden="true">↗</span></a>'
+def external_link(label, url, description=None):
+    hint = f' title="{esc(description, quote=True)}"' if description else ''
+    return f'<a href="{esc(url, quote=True)}" target="_blank" rel="noopener noreferrer"{hint}>{esc(label)} <span aria-hidden="true">↗</span></a>'
+
+def readable_source(url, fallback):
+    return fallback if url.startswith('https://api.crossref.org/') else url
 
 def bibtex(p):
     kind = 'article' if p['status'] in ('Journal', 'Preprint') else 'inproceedings'
@@ -44,15 +48,15 @@ for i, p in enumerate(data['papers'], 1):
     primary = next(iter(p['links'].values()))
     previous = f'<p class="previous-title">Earlier title: {esc(p["alternateTitle"])}</p>' if p.get('alternateTitle') else ''
     main_date = next((d for d in p['dates'] if d['label'] == 'Conference dates'), p['dates'][0])
-    dates = ''.join(f'<span>{esc(d["label"])} · <a href="{esc(d["source"], quote=True)}" target="_blank" rel="noopener noreferrer">{time_html(d["start"], d.get("end"))}</a></span>' for d in p['dates'] if d != main_date)
+    dates = ''.join(f'<span>{esc(d["label"])} · <a href="{esc(readable_source(d["source"], primary), quote=True)}" target="_blank" rel="noopener noreferrer">{time_html(d["start"], d.get("end"))}</a></span>' for d in p['dates'] if d != main_date)
     status = f'Accepted · {p["status"]}' if p.get('accepted') else p['status']
     issue = f'<p>{esc(p["bibliographicDetails"])}</p>' if p.get('bibliographicDetails') else ''
     venue = 'arXiv' if p['status'] == 'Preprint' else p['venue']
     badge = '' if p['status'] in ('Preprint', 'Journal', 'Conference') else f'<span class="status">{esc(status)}</span>'
     papers.append(f'''<article class="publication" id="paper-{p['id']}" data-topics="{' '.join(p['topics'])}">
       <div>
-      <div class="pub-heading"><h3 class="pub-title"><a href="{esc(primary, quote=True)}" target="_blank" rel="noopener noreferrer">{esc(p['title'])}</a></h3></div>
-      <div class="pub-meta"><span class="venue">{esc(venue)}</span>{badge}<a href="{esc(main_date['source'], quote=True)}" target="_blank" rel="noopener noreferrer">{time_html(main_date['start'], main_date.get('end'))}</a></div>
+      <div class="pub-heading"><h3 class="pub-title"><a href="{esc(primary, quote=True)}" target="_blank" rel="noopener noreferrer">{esc(p['title'])} <span class="title-arrow" aria-hidden="true">↗</span></a></h3></div>
+      <div class="pub-meta"><a class="venue" href="{esc(p['venueUrl'], quote=True)}" target="_blank" rel="noopener noreferrer">{esc(venue)}</a>{badge}<a href="{esc(readable_source(main_date['source'], primary), quote=True)}" target="_blank" rel="noopener noreferrer">{time_html(main_date['start'], main_date.get('end'))}</a></div>
       <p class="pub-authors">{authors}</p>
       <div class="pub-links">{links}<button class="cite-button js-only" data-cite="{p['id']}" aria-label="Cite {esc(p['short'], quote=True)}">Cite</button></div>
       <details class="paper-details"><summary>Details</summary><p class="pub-summary">{esc(p['summary'])}</p><div class="pub-dates">{dates}</div>{issue}{previous}</details></div>
@@ -71,7 +75,7 @@ milestone_titles = {
     'Gold · ModelScope AI Hackathon Tour national final': 'Our team won public-interest track Gold at the ModelScope hackathon final',
 }
 for item in data['milestones']:
-    source = item['links'].get('Conference', next(iter(item['links'].values())))
+    source = item['links'].get('Track details') or item['links'].get('Conference') or next(iter(item['links'].values()))
     title = milestone_titles.get(item['title'], item['title'])
     milestones.append(f'''<li class="milestone"><div class="milestone-date">{time_html(item['start'], item.get('end'))}</div><h3>{external_link(title, source)}</h3></li>''')
 timeline = '<ol class="milestone-list">' + ''.join(milestones[:3]) + '</ol>'
@@ -80,7 +84,7 @@ awards = []
 for award in data['awards']:
     if award.get('source'):
         continue  # Team prizes already appear in the news timeline.
-    event = external_link(award['event'], award['source']) if award.get('source') else esc(award['event'])
+    event = external_link(award['event'], award['eventUrl'], award.get('linkDescription'))
     awards.append(f'<li><span class="award-year">{time_html(award["date"], award.get("end"))}</span><span><strong>{esc(award["title"])}</strong><br>{event}</span></li>')
 
 schema = {"@context": "https://schema.org", "@type": "Person", "name": data['name'], "alternateName": data['chineseName'], "url": "https://underfitting-lu.github.io/", "image": "https://underfitting-lu.github.io/assets/profile.jpg", "email": data['email'], "affiliation": {"@type": "CollegeOrUniversity", "name": "Nanjing University of Posts and Telecommunications"}, "sameAs": [data['github'], data['scholar']], "knowsAbout": ["AI Agents", "Speech", "Perception", "Machine Learning", "Large Language Models", "Representation Learning"]}
@@ -111,7 +115,7 @@ page = '''<!doctype html>
   <div>
     <h1 id="hero-title">Zijian Lu</h1><div class="chinese-name" lang="zh-CN">陆梓健</div>
     <p class="hero-topics"><span>Agent</span><span>Speech</span><span>Perception</span></p>
-    <p class="hero-bio">Communication Engineering undergraduate at <strong>NJUPT</strong>.<br>Co-founder &amp; Algorithm Lead, <strong>Shouyi Technology</strong>.</p><p class="hero-foundations">ML · LLMs · Representation Learning</p>
+    <p class="hero-bio">Communication Engineering undergraduate at <strong><a class="inline-link" href="__ORG_UNIVERSITY__" target="_blank" rel="noopener noreferrer">NJUPT</a></strong>.<br>Co-founder &amp; Algorithm Lead, <strong><a class="inline-link" href="__ORG_COMPANY__" target="_blank" rel="noopener noreferrer">Shouyi Technology</a></strong>.</p><p class="hero-foundations">ML · LLMs · Representation Learning</p>
     <div class="hero-links"><a class="text-link" href="https://scholar.google.com/citations?user=92y6JNMAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer">Google Scholar <span class="external" aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/underfitting-lu" target="_blank" rel="noopener noreferrer">GitHub <span class="external" aria-hidden="true">↗</span></a><a class="text-link" href="assets/Zijian_Lu_CV.pdf" target="_blank" rel="noopener">CV <span class="external" aria-hidden="true">↓</span></a><a class="text-link" href="mailto:b24011519@njupt.edu.cn">Email <span class="external" aria-hidden="true">↗</span></a></div>
   </div>
   <div class="portrait-block"><img class="portrait" src="assets/profile.jpg" alt="Portrait of Zijian Lu" width="600" height="750" fetchpriority="high"></div>
@@ -144,22 +148,22 @@ page = '''<!doctype html>
 
 <section class="section" id="building" aria-labelledby="building-title">
   <div class="section-heading"><h2 id="building-title">Projects</h2></div>
-  <div class="venture"><img class="venture-image" src="assets/forget-me-not.jpg" alt="The Forget-Me-Not project demonstrated at a public technology exhibition" width="1000" height="750" loading="lazy"><div><div class="venture-role">Shouyi Technology · May 2026–present</div><h3>Forget-Me-Not <span lang="zh-CN">勿忘我</span></h3><p>Speech-based cognitive screening for older adults, from telephone conversations to community pilots.</p></div></div>
+  <div class="venture"><img class="venture-image" src="assets/forget-me-not.jpg" alt="The Forget-Me-Not project demonstrated at a public technology exhibition" width="1000" height="750" loading="lazy"><div><div class="venture-role">Shouyi Technology · May 2026–present</div><h3><a href="__ORG_COMPANY__" target="_blank" rel="noopener noreferrer">Forget-Me-Not <span lang="zh-CN">勿忘我</span> <span class="title-arrow" aria-hidden="true">↗</span></a></h3><p>Speech-based cognitive screening for older adults, from telephone conversations to community pilots.</p></div></div>
 </section>
 
 <section class="section" id="open-source" aria-labelledby="open-source-title">
   <div class="section-heading"><h2 id="open-source-title">Open source</h2></div>
-  <div class="open-source-grid"><article class="open-project"><h3>ContractSkill</h3><p>Repairable skills for web agents.</p><a href="https://github.com/underfitting-lu/contractskill" target="_blank" rel="noopener noreferrer">GitHub ↗</a></article><article class="open-project"><h3>ResearchOS</h3><p>An autonomous research agent.</p><a href="https://github.com/underfitting-lu/researchos-campus-agent" target="_blank" rel="noopener noreferrer">GitHub ↗</a></article><article class="open-project"><h3>Maintenance Assistant</h3><p>Multimodal RAG for maintenance on LoongArch Kylin.</p><a href="https://github.com/underfitting-lu/multimodal-maintenance-assistant" target="_blank" rel="noopener noreferrer">GitHub ↗</a></article></div>
+  <div class="open-source-grid"><article class="open-project"><h3><a href="https://github.com/underfitting-lu/contractskill" target="_blank" rel="noopener noreferrer">ContractSkill <span class="title-arrow" aria-hidden="true">↗</span></a></h3><p>Repairable skills for web agents.</p></article><article class="open-project"><h3><a href="https://github.com/underfitting-lu/researchos-campus-agent" target="_blank" rel="noopener noreferrer">ResearchOS <span class="title-arrow" aria-hidden="true">↗</span></a></h3><p>An autonomous research agent.</p></article><article class="open-project"><h3><a href="https://github.com/underfitting-lu/multimodal-maintenance-assistant" target="_blank" rel="noopener noreferrer">Maintenance Assistant <span class="title-arrow" aria-hidden="true">↗</span></a></h3><p>Multimodal RAG for maintenance on LoongArch Kylin.</p></article></div>
 </section>
 
 <section class="section" id="field-notes" aria-labelledby="field-title">
   <div class="section-heading"><h2 id="field-title">In the field</h2></div>
-  <div class="field-grid"><figure><img src="assets/cscwd.jpg" alt="Zijian Lu presenting research at IEEE CSCWD 2026" loading="lazy" width="1000" height="625"><figcaption><strong>IEEE CSCWD · Fuzhou</strong><span> <a href="https://fyust.edu.cn/gjhyqk/cscwd2026/" target="_blank" rel="noopener noreferrer">13–15 May 2026 ↗</a></span></figcaption></figure><figure><img src="assets/ubicomp.jpg" alt="Conference photograph at UbiComp and ISWC 2026" loading="lazy" width="1000" height="625"><figcaption><strong>UbiComp / ISWC · Shanghai</strong><span> <a href="https://ubicomp.org/ubicomp-iswc-2026/iswc-cfp/" target="_blank" rel="noopener noreferrer">11–15 Oct 2026 ↗</a></span></figcaption></figure></div>
+  <div class="field-grid"><figure><a href="https://fyust.edu.cn/gjhyqk/cscwd2026/" target="_blank" rel="noopener noreferrer"><img src="assets/cscwd.jpg" alt="Zijian Lu presenting research at IEEE CSCWD 2026" loading="lazy" width="1000" height="625"></a><figcaption><strong>IEEE CSCWD · Fuzhou</strong><span> <a href="https://fyust.edu.cn/gjhyqk/cscwd2026/" target="_blank" rel="noopener noreferrer">13–15 May 2026 ↗</a></span></figcaption></figure><figure><a href="https://ubicomp.org/ubicomp-iswc-2026/iswc-cfp/" target="_blank" rel="noopener noreferrer"><img src="assets/ubicomp.jpg" alt="Conference photograph at UbiComp and ISWC 2026" loading="lazy" width="1000" height="625"></a><figcaption><strong>UbiComp / ISWC · Shanghai</strong><span> <a href="https://ubicomp.org/ubicomp-iswc-2026/iswc-cfp/" target="_blank" rel="noopener noreferrer">11–15 Oct 2026 ↗</a></span></figcaption></figure></div>
 </section>
 
 <section class="section" id="about" aria-labelledby="about-title">
   <div class="section-heading"><h2 id="about-title">About</h2></div>
-  <div class="about-grid"><div><div class="education-item"><span class="date">SEP 2024 — PRESENT · EXPECTED 2028</span><h3>Nanjing University of Posts and Telecommunications</h3><p>B.Eng. candidate, Communication Engineering<br>School of Communication and Information Engineering</p></div><div class="research-community"><h3>MICS Lab / Xindu team</h3><p>Undergraduate researcher; speech-track recruitment contact.</p><div class="milestone-links"><a href="https://www.njupt-mics.cn/" target="_blank" rel="noopener noreferrer">Group ↗</a><a href="https://www.njupt-mics.cn/join/medeng/voice" target="_blank" rel="noopener noreferrer">Speech research challenges ↗</a></div></div></div><ul class="awards" aria-label="Selected honors">__AWARDS__</ul></div>
+  <div class="about-grid"><div><div class="education-item"><span class="date">SEP 2024 — PRESENT · EXPECTED 2028</span><h3><a href="__ORG_UNIVERSITY__" target="_blank" rel="noopener noreferrer">Nanjing University of Posts and Telecommunications <span class="title-arrow" aria-hidden="true">↗</span></a></h3><p>B.Eng. candidate, Communication Engineering<br><a class="inline-link" href="__ORG_SCHOOL__" target="_blank" rel="noopener noreferrer">School of Communication and Information Engineering</a></p></div><div class="research-community"><h3><a href="__ORG_GROUP__" target="_blank" rel="noopener noreferrer">MICS Lab / Xindu team <span class="title-arrow" aria-hidden="true">↗</span></a></h3><p>Undergraduate researcher; <a class="inline-link" href="__ORG_RECRUITMENT__" target="_blank" rel="noopener noreferrer">speech-track recruitment contact ↗</a>.</p></div></div><ul class="awards" aria-label="Selected honors">__AWARDS__</ul></div>
 </section>
 
 
@@ -171,6 +175,8 @@ __CITATIONS__
 '''
 page = page.replace('__SCHEMA__', json.dumps(schema, ensure_ascii=False)).replace('__PAPERS__', '\n'.join(papers)).replace('__CITATIONS__', '\n'.join(citations))
 page = page.replace('__TIMELINE__', timeline).replace('__AWARDS__', ''.join(awards))
+for name, url in data['organizations'].items():
+    page = page.replace('__ORG_' + name.upper() + '__', esc(url, quote=True))
 (ROOT / 'index.html').write_text(page, encoding='utf-8')
 (ROOT / 'publications.bib').write_text('\n\n'.join(bibtex(p) for p in data['papers']) + '\n', encoding='utf-8')
 (ROOT / 'sitemap.xml').write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://underfitting-lu.github.io/</loc><lastmod>{data["updated"]}</lastmod></url></urlset>\n', encoding='utf-8')

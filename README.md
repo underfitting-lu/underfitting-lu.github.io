@@ -19,6 +19,10 @@ Live site: https://underfitting-lu.github.io/
 The homepage keeps short headings and summaries. Paper abstracts, additional dates,
 and earlier titles are available under Details; older news is collapsed. The data
 file retains full records, including honors that already appear in the news.
+Paper titles open arXiv or the publisher; PDF links open the seven public arXiv
+full texts. Project and organization names link to their public sites. Honor
+event links identify the organizer or university; they are not individual award
+certificates. No private repository or supporting document is published.
 
 After editing content, run `python scripts/build.py`. Preview with
 `python -m http.server 8765` and open http://localhost:8765/.
