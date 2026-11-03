@@ -1,0 +1,89 @@
+{
+  "name": "Zijian Lu",
+  "chineseName": "陆梓健",
+  "email": "b24011519@njupt.edu.cn",
+  "scholar": "https://scholar.google.com/citations?user=92y6JNMAAAAJ&hl=en",
+  "github": "https://github.com/underfitting-lu",
+  "updated": "2026-11-03",
+  "scholarSnapshot": {"citations": 21, "hIndex": 2, "i10Index": 1},
+  "papers": [
+    {
+      "id": "contractskill",
+      "short": "ContractSkill",
+      "title": "ContractSkill: Repairable Contract-Based Skills for Multimodal Web Agents",
+      "authors": ["Zijian Lu", "Yiping Zuo", "Yupeng Nie", "Xin He", "Weibei Fan", "Lianyong Qi", "Shi Jin"],
+      "venue": "ACM Multimedia", "year": 2026, "status": "Poster", "topics": ["agent"],
+      "summary": "Making model-generated skills executable, verifiable, and locally repairable for multimodal web agents.",
+      "links": {"Paper": "https://doi.org/10.1145/3767308.3836465", "Code": "https://github.com/underfitting-lu/contractskill"},
+      "featured": true
+    },
+    {
+      "id": "speech-screening",
+      "short": "Cross-corpus speech screening",
+      "title": "Why Alzheimer's Speech Screening Fails to Generalize: Bridging the Deployment Gap via Cross-Corpus Evidence Anchoring",
+      "authors": ["Zijian Lu", "Sizhe Liu", "Yin Zhang", "Jixuan Deng", "Xinrong Lin", "Xinchen Yuan", "Chicheng Jin", "Yiping Zuo", "Yuanchao Li"],
+      "venue": "NCMMSC", "year": 2026, "status": "Oral", "topics": ["speech"],
+      "summary": "Auditing speech and language markers across English and Mandarin corpora, then anchoring screening models in transferable evidence.",
+      "links": {"Paper": "https://arxiv.org/abs/2609.31293"}, "featured": true
+    },
+    {
+      "id": "supersensedoctor",
+      "short": "SuperSenseDoctor",
+      "title": "SuperSenseDoctor: A Multimodal and Contactless Agent for Health Tracking",
+      "authors": ["Xuwen Zhang", "Zijian Lu", "Yicheng Lei", "Rui Qiu", "Jiale Li", "Yiping Zuo", "Weibei Fan", "Fu Xiao"],
+      "venue": "UbiComp / ISWC", "year": 2026, "status": "Student Challenge", "topics": ["perception", "agent"],
+      "summary": "Connecting contactless WiFi, radar, and thermal observations to a persistent health state and traceable care-support decisions. My focus: sensing algorithms and multimodal fusion.",
+      "links": {"Paper": "https://arxiv.org/abs/2609.16257"}, "featured": true
+    },
+    {
+      "id": "vital-rag", "short": "VITAL-RAG",
+      "title": "VITAL-RAG: Invariance Race for Context Allocation in Coding Agents",
+      "authors": ["Zijian Lu", "Yonghua Lu", "Mingcai Chen", "Yiping Zuo", "Xin He", "Weijun Wang", "Weibei Fan"],
+      "venue": "arXiv:2607.26937", "year": 2026, "status": "Preprint", "topics": ["agent"],
+      "summary": "Allocating a coding agent's context by canonical code objects while retaining fragments that add useful local semantics.",
+      "links": {"Paper": "https://arxiv.org/abs/2607.26937"}
+    },
+    {
+      "id": "wirelessopsagent", "short": "WirelessOpsAgent",
+      "title": "WirelessOpsAgent: A Benchmark and Agent Design for Action Assurance in Wireless Networks",
+      "authors": ["Zijian Lu", "Yiping Zuo", "Hao Xu", "Weicong Chen", "Xin He", "Jiajia Guo", "Shi Jin"],
+      "venue": "arXiv:2608.08277", "year": 2026, "status": "Preprint", "topics": ["agent"],
+      "summary": "Checking whether current telemetry still supports a proposed wireless-network action before it is executed.",
+      "links": {"Paper": "https://arxiv.org/abs/2608.08277"}
+    },
+    {
+      "id": "prior-directions", "short": "Prior Directions",
+      "title": "Prior Directions: Separating Geometric Identification from Behavioral Efficacy in Visual Revision",
+      "alternateTitle": "Prior Directions: Why GUI Grounding Gets Locked in the Past",
+      "authors": ["Weile Gong", "Zijian Lu", "Mingcai Chen", "Yiping Zuo", "Xin He", "Weibei Fan"],
+      "venue": "arXiv:2607.26913", "year": 2026, "status": "Preprint", "topics": ["perception"],
+      "summary": "Studying how stale verbal priors shape visual representations, and separating identifiable subspaces from effective behavioral interventions.",
+      "links": {"Paper": "https://arxiv.org/abs/2607.26913"}
+    },
+    {
+      "id": "geometric-risk", "short": "Geometric Risk Control",
+      "title": "Geometric Risk Control for Vision-Language Model OCR",
+      "alternateTitle": "From Plausibility to Verifiability: Risk-Controlled Generative OCR with Vision-Language Models",
+      "authors": ["Weile Gong", "Zijian Lu", "Mingcai Chen", "Yiping Zuo", "Xin He", "Weibei Fan"],
+      "venue": "arXiv:2603.19790", "year": 2026, "status": "Preprint", "topics": ["perception"],
+      "summary": "Using repeatable geometric probes and cross-view evidence to control which OCR outputs a vision-language model releases.",
+      "links": {"Paper": "https://arxiv.org/abs/2603.19790"}
+    },
+    {
+      "id": "drone-isac", "short": "Fluid Antenna ISAC",
+      "title": "Fluid Antenna-Aided ISAC for Urban Drone Delivery: System Design, Edge Realization, and Evaluation",
+      "authors": ["Zijian Lu", "Yiping Zuo", "Zihui Shu", "Weicong Chen", "Ning Gao", "Chen Dai", "Weibei Fan"],
+      "venue": "IEEE Internet of Things Magazine", "year": 2026, "status": "Journal", "topics": ["perception"],
+      "summary": "Bringing integrated sensing and communication into urban drone-delivery system design and edge realization.",
+      "links": {"Scholar": "https://scholar.google.com/citations?view_op=view_citation&user=92y6JNMAAAAJ&citation_for_view=92y6JNMAAAAJ:u-x6o8ySG0sC"}
+    },
+    {
+      "id": "secure-isac", "short": "Secure UAV ISAC",
+      "title": "Secrecy Rate Maximization for Fluid Antenna-aided ISAC System with UAVs",
+      "authors": ["Zijian Lu", "Yiping Zuo", "Xin He", "Lei Wang", "Weicong Chen", "Chen Dai", "Weibei Fan"],
+      "venue": "IEEE CSCWD", "year": 2026, "status": "Conference", "topics": ["perception"],
+      "summary": "Jointly optimizing beamforming, antenna positions, and artificial-noise power for secure UAV sensing and communication.",
+      "links": {"Scholar": "https://scholar.google.com/citations?view_op=view_citation&user=92y6JNMAAAAJ&citation_for_view=92y6JNMAAAAJ:9yKSN-GCB0IC"}
+    }
+  ]
+}
