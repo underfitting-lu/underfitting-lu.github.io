@@ -16,6 +16,10 @@ Live site: https://underfitting-lu.github.io/
 - `main.js`: topic filters, search, research tabs, theme, and BibTeX dialogs.
 - `assets/`: selected public-facing photos and the CV PDF.
 
+The homepage keeps short headings and summaries. Paper abstracts, additional dates,
+and earlier titles are available under Details; older news is collapsed. The data
+file retains full records, including honors that already appear in the news.
+
 After editing content, run `python scripts/build.py`. Preview with
 `python -m http.server 8765` and open http://localhost:8765/.
 
