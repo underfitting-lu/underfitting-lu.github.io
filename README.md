@@ -58,6 +58,16 @@ No analytics, API key, or runtime server is required.
   is inferred. The November homepage news date is the website announcement month.
 - Conference categories for ACM MM 2026 (Poster), NCMMSC 2026 (Oral), and
   UbiComp/ISWC 2026 Student Challenge were supplied by the website owner.
+- The owner also confirmed CSCWD 2026 as Oral. Full conference names are shown
+  on the papers page and in both bibliography formats; the homepage uses short names.
+- CCF labels were checked on 4 November 2026 against the official CCF pages:
+  [ACM MM — A](https://www.ccf.org.cn/c/2017-03-17/588341.shtml),
+  [NCMMSC — C](https://www.ccf.org.cn/Chapters/TC/News_/2026-06-15/903672.shtml),
+  [GLOBECOM — C](https://www.ccf.org.cn/Academic_Evaluation/CN/zgjsjxhtjgjxshy/cl/2017-03-13/586307.shtml),
+  and [CSCWD — C; UbiComp/IMWUT — A](https://www.ccf.org.cn/Academic_Evaluation/HCIAndPC/).
+  The UbiComp A label explicitly refers to the main conference, while
+  SuperSenseDoctor remains identified as Student Challenge. No conference grade
+  is assigned to the preprint or the journal entry.
 - SuperSenseDoctor uses the updated public title and eight-author list from
   the owner's Scholar record, linked to arXiv `2609.16257`.
 - Education, entrepreneurship, honors, portraits, and conference photos were

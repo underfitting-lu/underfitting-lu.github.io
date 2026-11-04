@@ -25,7 +25,7 @@ export default function Home() {
     <Section>
       <Heading as="h2" variant="section-title">Selected research</Heading>
       <div className="selected-papers">{data.papers.filter(p=>p.featured).map(p=><NextLink className="selected-paper" key={p.id} href={`/papers/#${p.id}`}>
-        <ResearchArt topic={p.topics[0]} /><div><h3>{p.short}</h3><p>{p.venue} {p.year} · {p.status}{p.accepted?' · Accepted':''}</p></div><span aria-hidden="true">↗</span>
+        <ResearchArt topic={p.topics[0]} /><div><h3>{p.short}</h3><p>{p.venue} {p.year} · {p.status}{p.accepted?' · Accepted':''}{p.ccf&&<strong> · {p.ccf.label}</strong>}</p></div><span aria-hidden="true">↗</span>
       </NextLink>)}</div>
       <Box textAlign="center" mt={5}><Button as={NextLink} href="/papers/" bg="grassTeal" color="#202023" _hover={{bg:'#9dd6d2'}} size="sm">All publications <span aria-hidden="true">&nbsp; →</span></Button></Box>
     </Section>

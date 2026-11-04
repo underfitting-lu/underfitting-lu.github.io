@@ -51,7 +51,14 @@
         }
       ],
       "accepted": true,
-      "venueUrl": "https://www.acmmm.org/2026/"
+      "venueUrl": "https://www.acmmm.org/2026/",
+      "venueFull": "ACM International Conference on Multimedia (ACM MM)",
+      "ccf": {
+        "rank": "A",
+        "label": "CCF A",
+        "source": "https://www.ccf.org.cn/c/2017-03-17/588341.shtml",
+        "checked": "2026-11-04"
+      }
     },
     {
       "id": "speech-screening",
@@ -94,7 +101,14 @@
         }
       ],
       "accepted": true,
-      "venueUrl": "https://ccf.org.cn/NCMMSC2026"
+      "venueUrl": "https://ccf.org.cn/NCMMSC2026",
+      "venueFull": "National Conference on Man-Machine Speech Communication (NCMMSC)",
+      "ccf": {
+        "rank": "C",
+        "label": "CCF C",
+        "source": "https://www.ccf.org.cn/Chapters/TC/News_/2026-06-15/903672.shtml",
+        "checked": "2026-11-04"
+      }
     },
     {
       "id": "supersensedoctor",
@@ -137,7 +151,15 @@
         }
       ],
       "accepted": false,
-      "venueUrl": "https://ubicomp.org/ubicomp-iswc-2026/iswc-cfp/"
+      "venueUrl": "https://ubicomp.org/ubicomp-iswc-2026/iswc-cfp/",
+      "venueFull": "ACM International Joint Conference on Pervasive and Ubiquitous Computing / ACM International Symposium on Wearable Computing (UbiComp / ISWC)",
+      "ccf": {
+        "rank": "A",
+        "label": "CCF A (UbiComp main conference)",
+        "source": "https://www.ccf.org.cn/Academic_Evaluation/HCIAndPC/",
+        "checked": "2026-11-04",
+        "note": "The CCF A ranking applies to UbiComp / IMWUT; this entry is from the Student Challenge track."
+      }
     },
     {
       "id": "safeplanner",
@@ -162,7 +184,14 @@
         "Paper": "https://underfitting-lu.github.io/papers/SafePlanner_GLOBECOM2026.pdf"
       },
       "dates": [],
-      "venueUrl": "https://globecom2026.ieee-globecom.org/"
+      "venueUrl": "https://globecom2026.ieee-globecom.org/",
+      "venueFull": "IEEE Global Communications Conference (GLOBECOM)",
+      "ccf": {
+        "rank": "C",
+        "label": "CCF C",
+        "source": "https://www.ccf.org.cn/Academic_Evaluation/CN/zgjsjxhtjgjxshy/cl/2017-03-13/586307.shtml",
+        "checked": "2026-11-04"
+      }
     },
     {
       "id": "near-field-isac",
@@ -188,7 +217,14 @@
         "Paper": "https://underfitting-lu.github.io/papers/ISAC_GLOBECOM2026.pdf"
       },
       "dates": [],
-      "venueUrl": "https://globecom2026.ieee-globecom.org/"
+      "venueUrl": "https://globecom2026.ieee-globecom.org/",
+      "venueFull": "IEEE Global Communications Conference (GLOBECOM)",
+      "ccf": {
+        "rank": "C",
+        "label": "CCF C",
+        "source": "https://www.ccf.org.cn/Academic_Evaluation/CN/zgjsjxhtjgjxshy/cl/2017-03-13/586307.shtml",
+        "checked": "2026-11-04"
+      }
     },
     {
       "id": "prior-directions",
@@ -271,7 +307,7 @@
       ],
       "venue": "IEEE CSCWD",
       "year": 2026,
-      "status": "Conference",
+      "status": "Oral",
       "topics": [
         "perception"
       ],
@@ -293,7 +329,14 @@
         }
       ],
       "accepted": false,
-      "venueUrl": "https://fyust.edu.cn/gjhyqk/cscwd2026/"
+      "venueUrl": "https://fyust.edu.cn/gjhyqk/cscwd2026/",
+      "venueFull": "IEEE International Conference on Computer Supported Cooperative Work in Design (CSCWD)",
+      "ccf": {
+        "rank": "C",
+        "label": "CCF C",
+        "source": "https://www.ccf.org.cn/Academic_Evaluation/HCIAndPC/",
+        "checked": "2026-11-04"
+      }
     }
   ],
   "upcoming": [
@@ -360,8 +403,8 @@
       "start": "2026-05-13",
       "end": "2026-05-15",
       "type": "Conference dates",
-      "title": "Sharing secure UAV ISAC research at IEEE CSCWD",
-      "text": "Research on secrecy-rate optimization for fluid-antenna sensing and communication systems with UAVs, in Fuzhou.",
+      "title": "Oral presentation at IEEE CSCWD",
+      "text": "Oral presentation of research on secrecy-rate optimization for fluid-antenna sensing and communication systems with UAVs, in Fuzhou.",
       "links": {
         "Paper": "https://doi.org/10.1109/CSCWD68734.2026.11582777",
         "Conference": "https://fyust.edu.cn/gjhyqk/cscwd2026/"
