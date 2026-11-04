@@ -32,9 +32,9 @@ export default function Home() {
     <Section>
       <Heading as="h2" variant="section-title">News</Heading>
       <ul className="news-list">
+        <li><time>Nov 2026</time><span>Two papers accepted at <Link href="/papers/#safeplanner">IEEE GLOBECOM 2026</Link>.</span></li>
         <li><time>Nov 2026</time><span><Link href="/papers/#contractskill">ContractSkill</Link> accepted at ACM MM (Poster); <Link href="/papers/#speech-screening">speech screening</Link> at NCMMSC (Oral).</span></li>
         <li><time>Aug 2026</time><span>Our project featured in <Link href={data.milestones[1].links['Read feature']}>People’s Daily Overseas Edition</Link>.</span></li>
-        <li><time>Jul 2026</time><span>Team First Prize at the <Link href={data.milestones[2].links['Award report']}>Xuhui OPC Special Competition</Link>.</span></li>
       </ul>
       <Box textAlign="right" mt={3}><Link as={NextLink} href="/about/#timeline">More from the journey →</Link></Box>
     </Section>

@@ -32,8 +32,10 @@ GitHub Actions builds and deploys only the static `out/` directory to GitHub Pag
 The homepage keeps short headings and summaries. Paper abstracts, additional dates,
 and earlier titles are available under Details; the full timeline is on About. The data
 file retains full records, including honors that already appear in the news.
-Paper titles open arXiv or the publisher; PDF links open the seven public arXiv
-full texts. Project and organization names link to their public sites. Honor
+Paper titles open arXiv, the publisher, or the selected GLOBECOM author PDFs.
+The website lists eight papers. Prior Directions is the only standalone preprint;
+other accepted or published papers may still link to their arXiv versions.
+Project and organization names link to their public sites. Honor
 event links identify the organizer or university; they are not individual award
 certificates. No private repository or supporting document is published.
 
@@ -45,8 +47,15 @@ No analytics, API key, or runtime server is required.
 
 - Google Scholar profile `92y6JNMAAAAJ`, checked 3 November 2026: nine public
   works, 21 citations, h-index 2, and i10-index 1. These are dated snapshots.
-- The latest public arXiv records take precedence over earlier Scholar titles:
-  `2603.19790`, `2607.26913`, `2607.26937`, and `2608.08277`.
+- The latest public arXiv title for Prior Directions (`2607.26913`) takes
+  precedence over its earlier Scholar title.
+- Per the owner's 4 November 2026 update, VITAL-RAG, WirelessOpsAgent, and
+  Geometric Risk Control are excluded from the website and its bibliography.
+- The owner confirmed two GLOBECOM 2026 acceptances: SafePlanner and Worst-Case
+  Secrecy Rate Maximization for Fluid Antenna-aided Near-Field ISAC System.
+  Titles and author order were checked against the supplied final six-page PDFs,
+  which are included as author copies. No oral/poster category or acceptance date
+  is inferred. The November homepage news date is the website announcement month.
 - Conference categories for ACM MM 2026 (Poster), NCMMSC 2026 (Oral), and
   UbiComp/ISWC 2026 Student Challenge were supplied by the website owner.
 - SuperSenseDoctor uses the updated public title and eight-author list from
@@ -73,8 +82,8 @@ No analytics, API key, or runtime server is required.
   owner's supporting materials. No more precise dates are inferred.
 - Current MICS membership and speech-track recruitment contact are supported
   by the group's own website. No role start date is claimed.
-- Only public repositories are linked. Local research drafts and project
-  runtime data are not part of this website repository.
+- Only public repositories are linked. Apart from the two selected GLOBECOM
+  author copies, local research drafts and project runtime data are not included.
 
 Respect the authorship and licenses of linked research and third-party material.
 Personal photographs and CV content belong to their owner.
