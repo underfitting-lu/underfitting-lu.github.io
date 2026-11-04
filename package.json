@@ -1,0 +1,22 @@
+{
+  "name": "zijian-lu-homepage",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Zijian Lu's academic homepage, adapted from Craftzdog's homepage.",
+  "scripts": {
+    "dev": "next dev --webpack -H 127.0.0.1 -p 3000",
+    "build": "next build --webpack && node scripts/finish-export.mjs",
+    "preview": "node scripts/preview.mjs"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "2.10.10",
+    "@emotion/react": "11.14.0",
+    "@emotion/styled": "11.14.1",
+    "framer-motion": "14.9.0",
+    "next": "16.4.5",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "three": "0.187.0"
+  },
+  "engines": {"node": ">=20.9.0"}
+}

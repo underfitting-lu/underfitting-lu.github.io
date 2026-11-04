@@ -7,28 +7,39 @@ Personal academic website for **Zijian Lu (陆梓健)**.
 
 Live site: https://underfitting-lu.github.io/
 
+## Development
+
+This is an adaptation of [Craftzdog's complete homepage project](https://github.com/craftzdog/craftzdog-homepage),
+built with Next.js, Chakra UI, Framer Motion, and Three.js. The workbench and SVG
+research illustrations are original. The original voxel dog is not used.
+See LICENSE and THIRD_PARTY_NOTICES.md.
+
+Use Node.js 24. Run `npm ci`, then `npm run dev`. For production,
+run `npm run build` and `npm run preview` (http://127.0.0.1:3000).
+GitHub Actions builds and deploys only the static `out/` directory to GitHub Pages.
+
 ## Edit
 
 - `content.json`: publications, typed dates, upcoming conferences, sourced milestones,
   and selected honors.
-- `scripts/build.py`: page content and the static HTML generator.
-- `styles.css`: layout, colors, typography, responsive and print styles.
-- `main.js`: topic filters, search, research tabs, theme, and BibTeX dialogs.
-- `assets/`: selected public-facing photos and the CV PDF.
+- `pages/`: home, papers, works, and about pages.
+- `components/`: navigation, layouts, and the original procedural 3D workbench.
+- `lib/theme.js` and `styles/site.css`: appearance and responsive styles.
+- `public/assets/`: selected public-facing photos and the CV PDF.
+- `public/fonts/`: self-hosted heading font and its license.
+- `public/publications.bib`: downloadable citations.
 
 The homepage keeps short headings and summaries. Paper abstracts, additional dates,
-and earlier titles are available under Details; older news is collapsed. The data
+and earlier titles are available under Details; the full timeline is on About. The data
 file retains full records, including honors that already appear in the news.
 Paper titles open arXiv or the publisher; PDF links open the seven public arXiv
 full texts. Project and organization names link to their public sites. Honor
 event links identify the organizer or university; they are not individual award
 certificates. No private repository or supporting document is published.
 
-After editing content, run `python scripts/build.py`. Preview with
-`python -m http.server 8765` and open http://localhost:8765/.
-
-No build system, JavaScript framework, analytics, API key, or server is required.
-GitHub Pages serves the files from the `main` branch at the repository root.
+The earlier root-level HTML, CSS, JavaScript, assets, and Python generator remain
+as a legacy source snapshot. They are not included in the deployed export.
+No analytics, API key, or runtime server is required.
 
 ## Content sources
 
@@ -65,6 +76,5 @@ GitHub Pages serves the files from the `main` branch at the repository root.
 - Only public repositories are linked. Local research drafts and project
   runtime data are not part of this website repository.
 
-The website design and implementation are original, using native HTML, CSS,
-and JavaScript. Respect the authorship and licenses of linked research and
-third-party material. Personal photographs and CV content belong to their owner.
+Respect the authorship and licenses of linked research and third-party material.
+Personal photographs and CV content belong to their owner.
