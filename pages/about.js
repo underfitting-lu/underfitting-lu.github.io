@@ -6,7 +6,7 @@ import { dateLabel } from '../lib/format'
 import data from '../content.json'
 
 export default function About() {
-  return <Article title="About"><Heading as="h1" size="xl" mb={7}>About me</Heading>
+  return <Article title="About"><Heading as="h1" className="page-title" mb={7}>About me<span className="name-dot">.</span></Heading>
     <Section><p>I’m Zijian Lu (陆梓健), a Communication Engineering undergraduate at <Link href={data.organizations.university}>Nanjing University of Posts and Telecommunications</Link>.</p>
       <p className="paragraph-gap">At <Link href={data.organizations.group}>MICS</Link>, I work on agents, speech, and perception. I also help build <Link href={data.organizations.company}>Forget-Me-Not</Link>, connecting research with community health care.</p>
       <div className="social-links"><Link href={`mailto:${data.email}`}>Email ↗</Link><Link href="/assets/Zijian_Lu_CV.pdf">CV ↗</Link><Link href={data.organizations.recruitment}>MICS speech group ↗</Link></div>

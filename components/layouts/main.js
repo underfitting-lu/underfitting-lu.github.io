@@ -1,6 +1,6 @@
 // Adapted from craftzdog/craftzdog-homepage. See LICENSE and THIRD_PARTY_NOTICES.md.
 import Head from 'next/head'
-import { Box, Container } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import Navbar from '../navbar'
 import Footer from '../footer'
 
@@ -24,9 +24,9 @@ export default function Main({ children, router }) {
     <a className="skip-link" href="#main-content">Skip to content</a>
     <Navbar path={router.pathname} />
     <Box as="main" id="main-content" minH="85vh" pb={8}>
-      <Container maxW={router.pathname === '/papers' ? '720px' : '600px'} pt={router.pathname === '/' ? 16 : 28} px={{base:6, md:5}}>
+      <div className={`page-shell ${router.pathname === '/' ? 'home-shell' : 'inner-shell'}`}>
         {children}<Footer />
-      </Container>
+      </div>
     </Box>
   </>
 }

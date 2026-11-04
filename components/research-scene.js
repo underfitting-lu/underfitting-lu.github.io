@@ -15,24 +15,24 @@ function WorkbenchFallback({ dark }) {
       aria-label="A miniature research workbench"
       style={{ display: 'block' }}
     >
-      <ellipse cx="320" cy="299" rx="206" ry="27" fill={dark ? '#000' : '#c8bca9'} opacity=".17" />
-      <path d="m133 207 180-91 195 98-181 92Z" fill="#ddbc8e" />
-      <path d="m133 207 194 99v15l-194-99Zm194 99 181-92v15l-181 92Z" fill="#b88d5d" />
-      <path d="M166 225v61l15 8v-62Zm280 13v49l15-8v-49Z" fill="#886343" />
-      <path d="m214 134 92-45 1 82-93 46Z" fill="#484d49" />
-      <path d="m222 138 76-37v61l-76 38Z" fill="#1d4847" />
-      <path d="m227 172 8-4 6-19 8 21 8-34 9 20 8-12 10 4 8-4" fill="none" stroke="#a1d2c8" strokeWidth="3" strokeLinejoin="round" />
-      <path d="m250 198 27-13 24 12-28 14Z" fill="#ece5d5" />
-      <path d="m358 181 44-23 38 19-45 23Z" fill="#e8dfce" />
-      <path d="m358 181 37 19v24l-37-19Zm37 19 45-23v24l-45 23Z" fill="#c9c1af" />
-      <path d="M421 173v-47" stroke="#5b655d" strokeWidth="5" />
-      <circle cx="421" cy="124" r="5" fill="#d78d73" />
-      <path d="m337 240 25-13 24 12-25 13Z" fill="#416f67" />
-      <path d="M361 235v-34" stroke="#d0ba95" strokeWidth="7" />
-      <path d="m343 182 20-13 20 14-7 24-26-2Z" fill="#d18d76" />
-      <path d="m184 207 31-15 26 13-31 15Z" fill="#426d63" />
-      <path d="m184 207 26 13v9l-26-13Zm26 13 31-15v9l-31 15Z" fill="#e7dbbe" />
-      <path d="m181 242 17-8 17 9-4 22-25-1Z" fill="#bc8669" />
+      <ellipse cx="320" cy="299" rx="206" ry="27" fill={dark ? '#000' : '#b6c1d8'} opacity=".17" />
+      <path d="m133 207 180-91 195 98-181 92Z" fill="#c7ceda" />
+      <path d="m133 207 194 99v15l-194-99Zm194 99 181-92v15l-181 92Z" fill="#a7b3c8" />
+      <path d="M166 225v61l15 8v-62Zm280 13v49l15-8v-49Z" fill="#8795af" />
+      <path d="m214 134 92-45 1 82-93 46Z" fill="#3a4355" />
+      <path d="m222 138 76-37v61l-76 38Z" fill="#263657" />
+      <path d="m227 172 8-4 6-19 8 21 8-34 9 20 8-12 10 4 8-4" fill="none" stroke="#a2c4ff" strokeWidth="3" strokeLinejoin="round" />
+      <path d="m250 198 27-13 24 12-28 14Z" fill="#e1e6ee" />
+      <path d="m358 181 44-23 38 19-45 23Z" fill="#e1e6ee" />
+      <path d="m358 181 37 19v24l-37-19Zm37 19 45-23v24l-45 23Z" fill="#c4ccdb" />
+      <path d="M421 173v-47" stroke="#3a4355" strokeWidth="5" />
+      <circle cx="421" cy="124" r="5" fill="#7196f0" />
+      <path d="m337 240 25-13 24 12-25 13Z" fill="#527cda" />
+      <path d="M361 235v-34" stroke="#c7ceda" strokeWidth="7" />
+      <path d="m343 182 20-13 20 14-7 24-26-2Z" fill="#7196f0" />
+      <path d="m184 207 31-15 26 13-31 15Z" fill="#527cda" />
+      <path d="m184 207 26 13v9l-26-13Zm26 13 31-15v9l-31 15Z" fill="#e1e6ee" />
+      <path d="m181 242 17-8 17 9-4 22-25-1Z" fill="#b2bccd" />
       <path d="M199 246v-30m0 16-15-13m15 6 15-15" fill="none" stroke="#557866" strokeWidth="7" strokeLinecap="round" />
     </svg>
   )
@@ -98,10 +98,10 @@ export default function ResearchScene({ theme = 'light' }) {
     canvas.style.cursor = 'grab'
 
     const palette = {
-      wood: '#cfa877', edge: '#ad8055', leg: '#9c7450', cream: '#e5deca',
-      paper: '#f3ead6', graphite: '#434b48', teal: '#487d73', coral: '#ca8973',
-      screen: '#234b49', wave: '#a5d1bc', leaf: '#65836b', clay: '#b98267',
-      floor: dark ? '#343735' : '#e9e4d8'
+      wood: '#c7ceda', edge: '#a7b3c8', leg: '#8795af', cream: '#e1e6ee',
+      paper: '#f1f3f7', graphite: '#3a4355', teal: '#527cda', coral: '#7196f0',
+      screen: '#263657', wave: '#a2c4ff', leaf: '#6d8b85', clay: '#b2bccd',
+      floor: dark ? '#292f3a' : '#e4e9f2'
     }
     function material(color, extra = {}) {
       const key = `${color}:${JSON.stringify(extra)}`

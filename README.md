@@ -14,6 +14,12 @@ built with Next.js, Chakra UI, Framer Motion, and Three.js. The workbench and SV
 research illustrations are original. The original voxel dog is not used.
 See LICENSE and THIRD_PARTY_NOTICES.md.
 
+The current UI is inspired by Kimi's neutral workspace surfaces: an original
+floating navigation, cool-blue research workbench, responsive research cards,
+and animated topic filters. The home and papers filters use shared pill controls;
+page entrance, scroll reveal, and card transitions respect reduced-motion
+preferences. Content remains visible in the static HTML without JavaScript.
+
 Use Node.js 24. Run `npm ci`, then `npm run dev`. For production,
 run `npm run build` and `npm run preview` (http://127.0.0.1:3000).
 GitHub Actions builds and deploys only the static `out/` directory to GitHub Pages.
@@ -26,7 +32,7 @@ GitHub Actions builds and deploys only the static `out/` directory to GitHub Pag
 - `components/`: navigation, layouts, and the original procedural 3D workbench.
 - `lib/theme.js` and `styles/site.css`: appearance and responsive styles.
 - `public/assets/`: selected public-facing photos and the CV PDF.
-- `public/fonts/`: self-hosted heading font and its license.
+- `public/fonts/`: retained template font and its license; the current UI uses system fonts.
 - `public/publications.bib`: downloadable citations.
 
 The homepage keeps short headings and summaries. Paper abstracts, additional dates,
