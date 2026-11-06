@@ -2,6 +2,7 @@ import NextLink from 'next/link'
 import { Heading, Link } from '@chakra-ui/react'
 import Article from '../components/layouts/article'
 import Section from '../components/section'
+import PressImage from '../components/press-image'
 import data from '../content.json'
 
 export default function Home() {
@@ -9,7 +10,7 @@ export default function Home() {
     <section className="field-hero" aria-labelledby="home-title">
       <div className="field-visual" aria-hidden="true"><img src="/assets/research-field.svg" width="1400" height="820" alt="" fetchPriority="high" decoding="async" /></div>
       <div className="field-intro">
-        <p className="field-kicker"><Link href={data.organizations.university}>NJUPT</Link><span> / </span><Link href={data.organizations.group}>MICS</Link></p>
+        <p className="field-kicker"><Link href={data.organizations.university}>Nanjing University of Posts and Telecommunications</Link></p>
         <Heading as="h1" id="home-title">Zijian Lu</Heading>
         <p className="field-role">Third-year undergraduate researcher</p>
       </div>
@@ -47,10 +48,13 @@ export default function Home() {
     <Section id="press">
       <div className="section-heading"><Heading as="h2" variant="section-title">Press</Heading><Link as={NextLink} href="/press/" className="text-link">All coverage ↗</Link></div>
       <div className="home-press-list">
-        <Link href={data.press[0].url}>CCTV-1 <span aria-hidden="true">↗</span></Link>
-        <Link href={data.press[11].url}>People’s Daily <span aria-hidden="true">↗</span></Link>
-        <Link href={data.press[1].url}>China News Service <span aria-hidden="true">↗</span></Link>
-        <Link href={data.press[6].url}>People.cn <span aria-hidden="true">↗</span></Link>
+        {[[0,'CCTV-1'],[11,'People’s Daily'],[1,'China News Service'],[6,'People.cn']].map(([index,label])=>{
+          const item=data.press[index]
+          return <Link href={item.url} key={item.id}>
+            <PressImage item={item} alt={item.title}/>
+            <span className="home-press-caption">{label}<span aria-hidden="true">↗</span></span>
+          </Link>
+        })}
       </div>
     </Section>
     <Section id="latest">

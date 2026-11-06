@@ -9,7 +9,7 @@ The application structure, section convention, and biography component are adapt
 from that project. A visible credit links to https://www.craftz.dog/.
 
 The earlier interface took visual inspiration from Kimi's neutral workspace
-(https://www.kimi.com/). The current homepage uses an original monochrome SVG
+(https://www.kimi.com/). The current homepage uses an original blue SVG
 optical line field and an editorial layout, informed by the owner's visual
 reference. The reference image itself is not copied into the website.
 No Kimi logos, source code, or proprietary graphic assets are used.
@@ -23,3 +23,8 @@ The template's M PLUS Rounded 1c Latin subset from @fontsource is retained,
 under the SIL Open Font License in public/fonts/OFL.txt. The current interface
 uses system fonts and does not request the retained font files.
 Other runtime libraries retain their respective licenses in npm packages.
+
+Press thumbnails are the original images and video posters used in the
+Forget-Me-Not official newsroom (https://www.wuwangwo.top/#progress).
+Each entry links to its original report; image source URLs are recorded
+in content.json. Copyright remains with the respective publishers.

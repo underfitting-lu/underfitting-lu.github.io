@@ -525,9 +525,7 @@
   "organizations": {
     "university": "https://www.njupt.edu.cn/",
     "school": "https://scie.njupt.edu.cn/",
-    "company": "https://www.wuwangwo.top/",
-    "group": "https://www.njupt-mics.cn/",
-    "recruitment": "https://www.njupt-mics.cn/join/medeng/voice"
+    "company": "https://www.wuwangwo.top/"
   },
   "press": [
     {
@@ -536,7 +534,14 @@
       "publisher": "CCTV-1 央视一套《晚间新闻》",
       "date": null,
       "type": "video",
-      "url": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/cctv-1-report.mp4"
+      "url": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/cctv-1-report.mp4",
+      "image": {
+        "src": "/assets/press/press-01.jpg",
+        "width": 720,
+        "height": 400,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/cctv-1-poster.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-02",
@@ -544,7 +549,14 @@
       "publisher": "中国新闻网",
       "date": "2026-09-22",
       "type": "video",
-      "url": "https://www.chinanews.com/sh/shipin/2026/09-22/news1069750.shtml"
+      "url": "https://www.chinanews.com/sh/shipin/2026/09-22/news1069750.shtml",
+      "image": {
+        "src": "/assets/press/press-02.jpg",
+        "width": 500,
+        "height": 333,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news-cns.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-03",
@@ -552,7 +564,14 @@
       "publisher": "合肥日报",
       "date": "2026-09-16",
       "type": "article",
-      "url": "https://news.ustc.edu.cn/info/1056/96300.htm"
+      "url": "https://news.ustc.edu.cn/info/1056/96300.htm",
+      "image": {
+        "src": "/assets/press/press-03.jpg",
+        "width": 708,
+        "height": 1002,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-01.jpg",
+        "fit": "contain"
+      }
     },
     {
       "id": "press-04",
@@ -560,7 +579,14 @@
       "publisher": "合肥发布／澎湃新闻",
       "date": "2026-09-16",
       "type": "article",
-      "url": "https://m.thepaper.cn/newsDetail_forward_34083297"
+      "url": "https://m.thepaper.cn/newsDetail_forward_34083297",
+      "image": {
+        "src": "/assets/press/press-04.jpg",
+        "width": 1054,
+        "height": 592,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-02.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-05",
@@ -568,7 +594,14 @@
       "publisher": "合肥晚报",
       "date": "2026-09-15",
       "type": "article",
-      "url": "https://news.ustc.edu.cn/info/1056/96294.htm"
+      "url": "https://news.ustc.edu.cn/info/1056/96294.htm",
+      "image": {
+        "src": "/assets/press/press-05.jpg",
+        "width": 524,
+        "height": 740,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-03.jpg",
+        "fit": "contain"
+      }
     },
     {
       "id": "press-06",
@@ -576,7 +609,14 @@
       "publisher": "中国县域经济网",
       "date": "2026-09-10",
       "type": "article",
-      "url": "https://www.xyshjj.cn/content/202609/10/c27345459.html"
+      "url": "https://www.xyshjj.cn/content/202609/10/c27345459.html",
+      "image": {
+        "src": "/assets/press/press-06.jpg",
+        "width": 1080,
+        "height": 720,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-04.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-07",
@@ -584,7 +624,14 @@
       "publisher": "人民网安徽",
       "date": "2026-09-10",
       "type": "article",
-      "url": "https://ah.people.com.cn/n2/2026/0910/c227131-41691914.html"
+      "url": "https://ah.people.com.cn/n2/2026/0910/c227131-41691914.html",
+      "image": {
+        "src": "/assets/press/press-07.png",
+        "width": 1080,
+        "height": 1920,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-05.png",
+        "fit": "contain"
+      }
     },
     {
       "id": "press-08",
@@ -592,7 +639,15 @@
       "publisher": "中国青年网",
       "date": "2026-09-09",
       "type": "article",
-      "url": "https://news.youth.cn/jsxw/202609/t20260909_16860641.htm"
+      "url": "https://news.youth.cn/jsxw/202609/t20260909_16860641.htm",
+      "image": {
+        "src": "/assets/press/press-08.jpg",
+        "width": 655,
+        "height": 995,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-06.jpg",
+        "fit": "cover",
+        "position": "center 35%"
+      }
     },
     {
       "id": "press-09",
@@ -600,7 +655,14 @@
       "publisher": "蜀山发布／澎湃新闻",
       "date": "2026-09-08",
       "type": "article",
-      "url": "https://m.thepaper.cn/newsDetail_forward_34035127"
+      "url": "https://m.thepaper.cn/newsDetail_forward_34035127",
+      "image": {
+        "src": "/assets/press/press-09.jpg",
+        "width": 1080,
+        "height": 720,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-07.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-10",
@@ -608,7 +670,14 @@
       "publisher": "中山+",
       "date": "2026-09-08",
       "type": "article",
-      "url": "https://zsrbapp.zsnews.cn/home/content/newsContent/1/742304"
+      "url": "https://zsrbapp.zsnews.cn/home/content/newsContent/1/742304",
+      "image": {
+        "src": "/assets/press/press-10.jpg",
+        "width": 4096,
+        "height": 2838,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-08.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-11",
@@ -616,7 +685,14 @@
       "publisher": "新华日报 · 交汇点",
       "date": "2026-09-04",
       "type": "article",
-      "url": "https://www.xhby.net/content/s6a9aab73e4b027d1d0a3b637.html"
+      "url": "https://www.xhby.net/content/s6a9aab73e4b027d1d0a3b637.html",
+      "image": {
+        "src": "/assets/press/press-11.jpg",
+        "width": 800,
+        "height": 533,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-12.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-12",
@@ -624,7 +700,14 @@
       "publisher": "人民日报海外版",
       "date": "2026-08-03",
       "type": "article",
-      "url": "https://paper.people.com.cn/rmrbhwb/pc/content/202608/03/content_30172676.html"
+      "url": "https://paper.people.com.cn/rmrbhwb/pc/content/202608/03/content_30172676.html",
+      "image": {
+        "src": "/assets/press/press-12.jpg",
+        "width": 800,
+        "height": 1228,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-13.jpg",
+        "fit": "contain"
+      }
     },
     {
       "id": "press-13",
@@ -632,7 +715,14 @@
       "publisher": "上海国际人才网",
       "date": "2026-07-10",
       "type": "article",
-      "url": "https://new.sh-italent.com/Article/202607/202607100006.shtml"
+      "url": "https://new.sh-italent.com/Article/202607/202607100006.shtml",
+      "image": {
+        "src": "/assets/press/press-13.jpg",
+        "width": 553,
+        "height": 368,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-14.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-14",
@@ -640,7 +730,14 @@
       "publisher": "南京市建邺区人民政府",
       "date": "2026-06-11",
       "type": "article",
-      "url": "https://www.njjy.gov.cn/jyyw/202606/t20260611_5856433.html"
+      "url": "https://www.njjy.gov.cn/jyyw/202606/t20260611_5856433.html",
+      "image": {
+        "src": "/assets/press/press-14.jpg",
+        "width": 1200,
+        "height": 672,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-16.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-15",
@@ -648,7 +745,14 @@
       "publisher": "合肥发布",
       "date": "2026-06-05",
       "type": "article",
-      "url": "https://mp.weixin.qq.com/s/8gVXjkhEnHiBrDUH_UXVVg"
+      "url": "https://mp.weixin.qq.com/s/8gVXjkhEnHiBrDUH_UXVVg",
+      "image": {
+        "src": "/assets/press/press-15.jpg",
+        "width": 946,
+        "height": 529,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-17.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-16",
@@ -656,7 +760,14 @@
       "publisher": "合肥新闻联播",
       "date": "2026-06",
       "type": "video",
-      "url": "https://weixin.qq.com/sph/AHg2E9IF1H"
+      "url": "https://weixin.qq.com/sph/AHg2E9IF1H",
+      "image": {
+        "src": "/assets/press/press-16.jpg",
+        "width": 1280,
+        "height": 720,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/tv-feature-poster.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-17",
@@ -664,7 +775,14 @@
       "publisher": "《商学院》／BMR商学院",
       "date": "2026-05-26",
       "type": "article",
-      "url": "https://www.sohu.com/a/1027840824_377096"
+      "url": "https://www.sohu.com/a/1027840824_377096",
+      "image": {
+        "src": "/assets/press/press-17.jpg",
+        "width": 853,
+        "height": 427,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-18.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-18",
@@ -672,7 +790,14 @@
       "publisher": "南京市建邺区人民政府",
       "date": "2026-05-22",
       "type": "article",
-      "url": "https://www.njjy.gov.cn/jyyw/202605/t20260522_5844613.html"
+      "url": "https://www.njjy.gov.cn/jyyw/202605/t20260522_5844613.html",
+      "image": {
+        "src": "/assets/press/press-18.jpg",
+        "width": 1080,
+        "height": 810,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-19.jpg",
+        "fit": "cover"
+      }
     },
     {
       "id": "press-19",
@@ -680,7 +805,14 @@
       "publisher": "南京日报／紫金山新闻",
       "date": "2026-05-21",
       "type": "article",
-      "url": "https://m.sohu.com/a/1025413236_121388342"
+      "url": "https://m.sohu.com/a/1025413236_121388342",
+      "image": {
+        "src": "/assets/press/press-19.jpg",
+        "width": 500,
+        "height": 889,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-20.jpg",
+        "fit": "contain"
+      }
     },
     {
       "id": "press-20",
@@ -688,7 +820,14 @@
       "publisher": "合肥日报／中国科大新闻网",
       "date": "2026-03-23",
       "type": "article",
-      "url": "https://news.ustc.edu.cn/info/1056/94363.htm"
+      "url": "https://news.ustc.edu.cn/info/1056/94363.htm",
+      "image": {
+        "src": "/assets/press/press-20.jpg",
+        "width": 1280,
+        "height": 959,
+        "source": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/story-22.jpg",
+        "fit": "cover"
+      }
     }
   ],
   "pressSource": {

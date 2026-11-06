@@ -113,8 +113,6 @@ No analytics, API key, or runtime server is required.
 - China Software Cup (August), service outsourcing competition (July), NJUPT
   Challenge Cup (May), and the university scholarship (year only) are from the
   owner's supporting materials. No more precise dates are inferred.
-- Current MICS membership and speech-track recruitment contact are supported
-  by the group's own website. No role start date is claimed.
 - Only public repositories are linked. Apart from the two selected GLOBECOM
   author copies, local research drafts and project runtime data are not included.
 

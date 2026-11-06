@@ -163,7 +163,7 @@ page = '''<!doctype html>
 
 <section class="section" id="about" aria-labelledby="about-title">
   <div class="section-heading"><h2 id="about-title">About</h2></div>
-  <div class="about-grid"><div><div class="education-item"><span class="date">SEP 2024 — PRESENT · EXPECTED 2028</span><h3><a href="__ORG_UNIVERSITY__" target="_blank" rel="noopener noreferrer">Nanjing University of Posts and Telecommunications <span class="title-arrow" aria-hidden="true">↗</span></a></h3><p>B.Eng. candidate, Communication Engineering<br><a class="inline-link" href="__ORG_SCHOOL__" target="_blank" rel="noopener noreferrer">School of Communication and Information Engineering</a></p></div><div class="research-community"><h3><a href="__ORG_GROUP__" target="_blank" rel="noopener noreferrer">MICS Lab / Xindu team <span class="title-arrow" aria-hidden="true">↗</span></a></h3><p>Undergraduate researcher; <a class="inline-link" href="__ORG_RECRUITMENT__" target="_blank" rel="noopener noreferrer">speech-track recruitment contact ↗</a>.</p></div></div><ul class="awards" aria-label="Selected honors">__AWARDS__</ul></div>
+  <div class="about-grid"><div><div class="education-item"><span class="date">SEP 2024 — PRESENT · EXPECTED 2028</span><h3><a href="__ORG_UNIVERSITY__" target="_blank" rel="noopener noreferrer">Nanjing University of Posts and Telecommunications <span class="title-arrow" aria-hidden="true">↗</span></a></h3><p>B.Eng. candidate, Communication Engineering<br><a class="inline-link" href="__ORG_SCHOOL__" target="_blank" rel="noopener noreferrer">School of Communication and Information Engineering</a></p></div></div><ul class="awards" aria-label="Selected honors">__AWARDS__</ul></div>
 </section>
 
 
