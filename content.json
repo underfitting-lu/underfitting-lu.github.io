@@ -4,7 +4,7 @@
   "email": "b24011519@njupt.edu.cn",
   "scholar": "https://scholar.google.com/citations?user=92y6JNMAAAAJ&hl=en",
   "github": "https://github.com/underfitting-lu",
-  "updated": "2026-11-04",
+  "updated": "2026-11-06",
   "scholarSnapshot": {
     "citations": 21,
     "hIndex": 2,
@@ -58,6 +58,11 @@
         "label": "CCF A",
         "source": "https://www.ccf.org.cn/c/2017-03-17/588341.shtml",
         "checked": "2026-11-04"
+      },
+      "preview": {
+        "src": "/assets/paper-previews/contractskill.webp",
+        "width": 773,
+        "height": 1000
       }
     },
     {
@@ -108,6 +113,11 @@
         "label": "CCF C",
         "source": "https://www.ccf.org.cn/Chapters/TC/News_/2026-06-15/903672.shtml",
         "checked": "2026-11-04"
+      },
+      "preview": {
+        "src": "/assets/paper-previews/speech-screening.webp",
+        "width": 773,
+        "height": 1000
       }
     },
     {
@@ -159,6 +169,11 @@
         "source": "https://www.ccf.org.cn/Academic_Evaluation/HCIAndPC/",
         "checked": "2026-11-04",
         "note": "The CCF A ranking applies to UbiComp / IMWUT; this entry is from the Student Challenge track."
+      },
+      "preview": {
+        "src": "/assets/paper-previews/supersensedoctor.webp",
+        "width": 773,
+        "height": 1000
       }
     },
     {
@@ -191,6 +206,11 @@
         "label": "CCF C",
         "source": "https://www.ccf.org.cn/Academic_Evaluation/CN/zgjsjxhtjgjxshy/cl/2017-03-13/586307.shtml",
         "checked": "2026-11-04"
+      },
+      "preview": {
+        "src": "/assets/paper-previews/safeplanner.webp",
+        "width": 773,
+        "height": 1000
       }
     },
     {
@@ -224,6 +244,11 @@
         "label": "CCF C",
         "source": "https://www.ccf.org.cn/Academic_Evaluation/CN/zgjsjxhtjgjxshy/cl/2017-03-13/586307.shtml",
         "checked": "2026-11-04"
+      },
+      "preview": {
+        "src": "/assets/paper-previews/near-field-isac.webp",
+        "width": 773,
+        "height": 1000
       }
     },
     {
@@ -257,7 +282,12 @@
           "source": "https://arxiv.org/abs/2607.26913"
         }
       ],
-      "venueUrl": "https://arxiv.org/abs/2607.26913"
+      "venueUrl": "https://arxiv.org/abs/2607.26913",
+      "preview": {
+        "src": "/assets/paper-previews/prior-directions.webp",
+        "width": 773,
+        "height": 1000
+      }
     },
     {
       "id": "drone-isac",
@@ -290,7 +320,12 @@
           "source": "https://api.crossref.org/works/10.1109/MIOT.2025.3644435"
         }
       ],
-      "venueUrl": "https://doi.org/10.1109/MIOT.2025.3644435"
+      "venueUrl": "https://doi.org/10.1109/MIOT.2025.3644435",
+      "preview": {
+        "src": "/assets/paper-previews/drone-isac.webp",
+        "width": 773,
+        "height": 1000
+      }
     },
     {
       "id": "secure-isac",
@@ -336,6 +371,11 @@
         "label": "CCF C",
         "source": "https://www.ccf.org.cn/Academic_Evaluation/HCIAndPC/",
         "checked": "2026-11-04"
+      },
+      "preview": {
+        "src": "/assets/paper-previews/secure-isac.webp",
+        "width": 773,
+        "height": 1000
       }
     }
   ],
@@ -488,5 +528,171 @@
     "company": "https://www.wuwangwo.top/",
     "group": "https://www.njupt-mics.cn/",
     "recruitment": "https://www.njupt-mics.cn/join/medeng/voice"
+  },
+  "press": [
+    {
+      "id": "press-01",
+      "title": "我眼中的中国 · 科创践初心",
+      "publisher": "CCTV-1 央视一套《晚间新闻》",
+      "date": null,
+      "type": "video",
+      "url": "https://www.wuwangwo.top/brand-static/20261022T093830Z/promo-assets/current/news/cctv-1-report.mp4"
+    },
+    {
+      "id": "press-02",
+      "title": "青春华章｜用“AI”守护记忆的18岁CEO",
+      "publisher": "中国新闻网",
+      "date": "2026-09-22",
+      "type": "video",
+      "url": "https://www.chinanews.com/sh/shipin/2026/09-22/news1069750.shtml"
+    },
+    {
+      "id": "press-03",
+      "title": "当记忆开始褪色，他点亮一盏灯",
+      "publisher": "合肥日报",
+      "date": "2026-09-16",
+      "type": "article",
+      "url": "https://news.ustc.edu.cn/info/1056/96300.htm"
+    },
+    {
+      "id": "press-04",
+      "title": "18岁科漂，在合肥有了“家”！",
+      "publisher": "合肥发布／澎湃新闻",
+      "date": "2026-09-16",
+      "type": "article",
+      "url": "https://m.thepaper.cn/newsDetail_forward_34083297"
+    },
+    {
+      "id": "press-05",
+      "title": "18岁CEO用AI守护老年人记忆",
+      "publisher": "合肥晚报",
+      "date": "2026-09-15",
+      "type": "article",
+      "url": "https://news.ustc.edu.cn/info/1056/96294.htm"
+    },
+    {
+      "id": "press-06",
+      "title": "中国科大18岁CEO：用“AI”守护记忆",
+      "publisher": "中国县域经济网",
+      "date": "2026-09-10",
+      "type": "article",
+      "url": "https://www.xyshjj.cn/content/202609/10/c27345459.html"
+    },
+    {
+      "id": "press-07",
+      "title": "刘思哲：技术发展不仅有速度和精度，更有背后的温度",
+      "publisher": "人民网安徽",
+      "date": "2026-09-10",
+      "type": "article",
+      "url": "https://ah.people.com.cn/n2/2026/0910/c227131-41691914.html"
+    },
+    {
+      "id": "press-08",
+      "title": "好评中国｜18岁中科大创业者刘思哲打造“勿忘我”，用语音AI技术开展老年认知障碍早筛",
+      "publisher": "中国青年网",
+      "date": "2026-09-09",
+      "type": "article",
+      "url": "https://news.youth.cn/jsxw/202609/t20260909_16860641.htm"
+    },
+    {
+      "id": "press-09",
+      "title": "中国科大18岁CEO：用“AI”守护记忆",
+      "publisher": "蜀山发布／澎湃新闻",
+      "date": "2026-09-08",
+      "type": "article",
+      "url": "https://m.thepaper.cn/newsDetail_forward_34035127"
+    },
+    {
+      "id": "press-10",
+      "title": "18岁当CEO！中山一中校友，登上新华社、人民网",
+      "publisher": "中山+",
+      "date": "2026-09-08",
+      "type": "article",
+      "url": "https://zsrbapp.zsnews.cn/home/content/newsContent/1/742304"
+    },
+    {
+      "id": "press-11",
+      "title": "一场赛事与一群年轻人，江苏AI创新的青春底色",
+      "publisher": "新华日报 · 交汇点",
+      "date": "2026-09-04",
+      "type": "article",
+      "url": "https://www.xhby.net/content/s6a9aab73e4b027d1d0a3b637.html"
+    },
+    {
+      "id": "press-12",
+      "title": "让“手搓”不“受挫”（融观中国）",
+      "publisher": "人民日报海外版",
+      "date": "2026-08-03",
+      "type": "article",
+      "url": "https://paper.people.com.cn/rmrbhwb/pc/content/202608/03/content_30172676.html"
+    },
+    {
+      "id": "press-13",
+      "title": "海聚英才 OPC 专项赛成功举行",
+      "publisher": "上海国际人才网",
+      "date": "2026-07-10",
+      "type": "article",
+      "url": "https://new.sh-italent.com/Article/202607/202607100006.shtml"
+    },
+    {
+      "id": "press-14",
+      "title": "刚满18岁，就在建邺开了公司",
+      "publisher": "南京市建邺区人民政府",
+      "date": "2026-06-11",
+      "type": "article",
+      "url": "https://www.njjy.gov.cn/jyyw/202606/t20260611_5856433.html"
+    },
+    {
+      "id": "press-15",
+      "title": "奔跑吧！合肥的创业新生代",
+      "publisher": "合肥发布",
+      "date": "2026-06-05",
+      "type": "article",
+      "url": "https://mp.weixin.qq.com/s/8gVXjkhEnHiBrDUH_UXVVg"
+    },
+    {
+      "id": "press-16",
+      "title": "《合肥新闻联播》：中国科大少年发明阿尔兹海默听诊器",
+      "publisher": "合肥新闻联播",
+      "date": "2026-06",
+      "type": "video",
+      "url": "https://weixin.qq.com/sph/AHg2E9IF1H"
+    },
+    {
+      "id": "press-17",
+      "title": "黑客松系列报道丨勿忘我：陪老人唠嗑中破译健康密码",
+      "publisher": "《商学院》／BMR商学院",
+      "date": "2026-05-26",
+      "type": "article",
+      "url": "https://www.sohu.com/a/1027840824_377096"
+    },
+    {
+      "id": "press-18",
+      "title": "一通电话筛查阿尔兹海默症？建邺已率先试点",
+      "publisher": "南京市建邺区人民政府",
+      "date": "2026-05-22",
+      "type": "article",
+      "url": "https://www.njjy.gov.cn/jyyw/202605/t20260522_5844613.html"
+    },
+    {
+      "id": "press-19",
+      "title": "后浪奔腾｜18岁少年在南京开公司！用AI预防阿尔茨海默病",
+      "publisher": "南京日报／紫金山新闻",
+      "date": "2026-05-21",
+      "type": "article",
+      "url": "https://m.sohu.com/a/1025413236_121388342"
+    },
+    {
+      "id": "press-20",
+      "title": "祝贺！中国科大刘思哲、靳驰骋、张引同学",
+      "publisher": "合肥日报／中国科大新闻网",
+      "date": "2026-03-23",
+      "type": "article",
+      "url": "https://news.ustc.edu.cn/info/1056/94363.htm"
+    }
+  ],
+  "pressSource": {
+    "url": "https://www.wuwangwo.top/#progress",
+    "checked": "2026-11-06"
   }
 }

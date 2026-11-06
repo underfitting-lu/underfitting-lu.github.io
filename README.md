@@ -27,11 +27,12 @@ GitHub Actions builds and deploys only the static `out/` directory to GitHub Pag
 ## Edit
 
 - `content.json`: publications, typed dates, upcoming conferences, sourced milestones,
-  and selected honors.
-- `pages/`: home, papers, works, and about pages.
+  selected honors, and the press archive.
+- `pages/`: home, papers, works, press, and about pages.
 - `components/`: navigation, layouts, and the original procedural 3D workbench.
 - `lib/theme.js` and `styles/site.css`: appearance and responsive styles.
 - `public/assets/`: selected public-facing photos and the CV PDF.
+- `public/assets/paper-previews/`: first-page WebP renders of the eight listed papers.
 - `public/fonts/`: retained template font and its license; the current UI uses system fonts.
 - `public/publications.bib`: downloadable citations.
 
@@ -51,6 +52,16 @@ No analytics, API key, or runtime server is required.
 
 ## Content sources
 
+- On 6 November 2026, the Press archive was populated with all 20 entries listed
+  in [the Forget-Me-Not newsroom](https://www.wuwangwo.top/#progress), preserving
+  the linked articles, original headlines, publishers, and available date precision.
+  The CCTV-1 video has no displayed publication date; the Hefei TV entry has a
+  month only. The archive links to the coverage rather than reproducing articles.
+- Each publication thumbnail is a render of its actual first page. ContractSkill
+  uses the supplied camera-ready PDF; NCMMSC, IoT Magazine, and CSCWD use the supplied
+  author manuscripts; GLOBECOM uses the two existing author copies. SuperSenseDoctor
+  and Prior Directions use the current public arXiv PDFs. Only the WebP renders
+  were added; the additional complete manuscripts are not bundled into the site.
 - Google Scholar profile `92y6JNMAAAAJ`, checked 3 November 2026: nine public
   works, 21 citations, h-index 2, and i10-index 1. These are dated snapshots.
 - The latest public arXiv title for Prior Directions (`2607.26913`) takes

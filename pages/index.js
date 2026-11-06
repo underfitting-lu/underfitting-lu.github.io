@@ -48,7 +48,7 @@ export default function Home() {
         <AnimatePresence initial={false} mode="popLayout">
           {selected.map(p=><motion.div className="research-card-wrap" layout key={p.id} initial={{opacity:0,y:14}} animate={{opacity:1,y:0}} exit={{opacity:0,scale:.97}} transition={{duration:.3}}>
             <NextLink className="selected-paper" href={`/papers/#${p.id}`}>
-              <div className="research-card-art"><ResearchArt topic={p.topics[0]} large /><span className="card-arrow" aria-hidden="true">↗</span></div>
+              <div className="research-card-art paper-card-art"><img className="paper-sheet" src={p.preview.src} width={p.preview.width} height={p.preview.height} alt="" loading="lazy" decoding="async" /><span className="card-arrow" aria-hidden="true">↗</span></div>
               <div className="research-card-copy"><h3>{p.short}</h3>
                 <p className="research-meta">{p.venue} {p.year} · {p.status}</p>
                 {p.ccf&&<span className="rank-label">{p.ccf.label}</span>}
@@ -57,6 +57,17 @@ export default function Home() {
           </motion.div>)}
         </AnimatePresence>
       </motion.div>
+    </Section>
+    <Section id="press">
+      <div className="press-strip">
+        <div className="section-heading"><Heading as="h2" variant="section-title">Press</Heading><Link as={NextLink} href="/press/" className="text-link">All coverage ↗</Link></div>
+        <div className="press-outlets">
+          <Link href={data.press[0].url}><strong className="outlet-cctv">CCTV-1</strong><span aria-hidden="true">↗</span></Link>
+          <Link href={data.press[11].url}><strong>People’s Daily</strong><span aria-hidden="true">↗</span></Link>
+          <Link href={data.press[1].url}><strong>China News Service</strong><span aria-hidden="true">↗</span></Link>
+          <Link href={data.press[6].url}><strong>People.cn</strong><span aria-hidden="true">↗</span></Link>
+        </div>
+      </div>
     </Section>
     <Section>
       <div className="home-bottom">

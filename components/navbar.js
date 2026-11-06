@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { Box, Link, IconButton, Menu, MenuButton, MenuList, MenuItem, useColorMode } from '@chakra-ui/react'
 
-const items = [['/','Home'],['/papers','Papers'],['/works','Works'],['/about','About']]
+const items = [['/','Home'],['/papers','Papers'],['/works','Works'],['/press','Press'],['/about','About']]
 function Glyph({ type }) {
   return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" aria-hidden="true">
     {type === 'menu' ? <path d="M4 8h16M4 16h16" /> : type === 'moon' ? <path d="M20.5 14.3A9 9 0 0 1 9.7 3.5 9 9 0 1 0 20.5 14.3Z" /> : <><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.4 1.4m11.2 11.2L19 19M5 19l1.4-1.4M17.6 6.4 19 5"/></>}
