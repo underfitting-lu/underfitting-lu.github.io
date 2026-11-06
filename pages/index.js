@@ -1,89 +1,65 @@
-import dynamic from 'next/dynamic'
 import NextLink from 'next/link'
-import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import { Heading, Link, useColorMode } from '@chakra-ui/react'
+import { Heading, Link } from '@chakra-ui/react'
 import Article from '../components/layouts/article'
 import Section from '../components/section'
-import ResearchArt from '../components/research-art'
-import TopicFilter from '../components/topic-filter'
 import data from '../content.json'
-const ResearchScene = dynamic(()=>import('../components/research-scene'),{ssr:false,loading:()=> <div className="scene-loading" aria-label="Loading research workbench"><ResearchArt topic="agent" large /></div>})
 
 export default function Home() {
-  const {colorMode} = useColorMode()
-  const [topic,setTopic] = useState('all')
-  const selected = data.papers.filter(p=>p.featured&&(topic==='all'||p.topics.includes(topic)))
   return <Article>
-    <section className="hero" aria-labelledby="home-title">
-      <div className="hero-copy">
-        <div className="hero-intro">
-          <img className="portrait" src="/assets/profile.jpg" alt="Zijian Lu" width="48" height="48" fetchPriority="high" />
-          <div>Undergraduate researcher<br/><Link href={data.organizations.university}>NJUPT</Link><span className="intro-dot"> / </span><Link href={data.organizations.group}>MICS</Link></div>
-        </div>
-        <Heading as="h1" id="home-title" className="hero-title">Zijian Lu<span className="name-dot">.</span></Heading>
-        <p className="hero-lead">I study how agents<br className="desktop-break"/> perceive, reason, and act.</p>
-        <p className="hero-description">Speech and multimodal sensing, grounded in machine learning, LLMs, and representation learning.</p>
-        <div className="social-links hero-links">
-          <Link href={data.scholar} className="primary-link">Scholar <span>↗</span></Link>
-          <Link href={data.github}>GitHub <span>↗</span></Link>
-          <Link href="/assets/Zijian_Lu_CV.pdf">CV <span>↗</span></Link>
-          <Link href={`mailto:${data.email}`}>Email <span>↗</span></Link>
-        </div>
+    <section className="field-hero" aria-labelledby="home-title">
+      <div className="field-visual" aria-hidden="true"><img src="/assets/research-field.svg" width="1400" height="820" alt="" fetchPriority="high" decoding="async" /></div>
+      <div className="field-intro">
+        <p className="field-kicker"><Link href={data.organizations.university}>NJUPT</Link><span> / </span><Link href={data.organizations.group}>MICS</Link></p>
+        <Heading as="h1" id="home-title">Zijian Lu</Heading>
+        <p className="field-role">Third-year undergraduate researcher</p>
       </div>
-      <div className="hero-visual">
-        <div className="scene-halo" aria-hidden="true"/><div className="scene-orbit" aria-hidden="true"/>
-        <div className="scene-frame"><ResearchScene theme={colorMode} /></div>
-        <div className="signal-chip signal-chip-wave" aria-hidden="true"><svg viewBox="0 0 88 28" fill="none"><path d="M2 14h8l4-6 5 13 5-20 6 26 6-22 5 14 5-9 5 4h35" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></div>
-        <div className="signal-chip signal-chip-agent" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><rect x="8" y="8" width="16" height="16" rx="5" stroke="currentColor" strokeWidth="1.5"/><path d="M12 2v6m8-6v6m-8 16v6m8-6v6M2 12h6m-6 8h6m16-8h6m-6 8h6" stroke="currentColor" strokeWidth="1.5"/><circle cx="13" cy="15" r="1.3" fill="currentColor"/><circle cx="19" cy="15" r="1.3" fill="currentColor"/><path d="M13 19h6" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg></div>
+      <div className="field-foot">
+        <div className="field-focus"><p>Agent · Speech · Perception</p><p>Machine learning · LLMs · Representation learning</p></div>
+        <div className="field-contacts">
+          <Link href={data.scholar}>Scholar ↗</Link>
+          <Link href={data.github}>GitHub ↗</Link>
+          <Link href="/assets/Zijian_Lu_CV.pdf">CV ↗</Link>
+          <Link href={`mailto:${data.email}`}>Email ↗</Link>
+        </div>
       </div>
     </section>
+    <div className="home-context">
+      <img src="/assets/profile.jpg" alt="Zijian Lu" width="56" height="70" className="editorial-portrait"/>
+      <p>I study how agents perceive, reason, and act. I’m a co-founder of <Link href={data.organizations.company}>Shouyi Technology</Link>, building voice AI for health.</p>
+      <Link as={NextLink} href="/about/" className="context-link">About ↗</Link>
+    </div>
     <Section id="research">
       <div className="section-heading">
         <Heading as="h2" variant="section-title">Selected research</Heading>
-        <Link as={NextLink} href="/papers/" className="text-link">All papers <span>↗</span></Link>
+        <Link as={NextLink} href="/papers/" className="text-link">All papers ↗</Link>
       </div>
-      <TopicFilter value={topic} onChange={setTopic} id="home" />
-      <motion.div layout className="selected-papers">
-        <AnimatePresence initial={false} mode="popLayout">
-          {selected.map(p=><motion.div className="research-card-wrap" layout key={p.id} initial={{opacity:0,y:14}} animate={{opacity:1,y:0}} exit={{opacity:0,scale:.97}} transition={{duration:.3}}>
-            <NextLink className="selected-paper" href={`/papers/#${p.id}`}>
-              <div className="research-card-art paper-card-art"><img className="paper-sheet" src={p.preview.src} width={p.preview.width} height={p.preview.height} alt="" loading="lazy" decoding="async" /><span className="card-arrow" aria-hidden="true">↗</span></div>
-              <div className="research-card-copy"><h3>{p.short}</h3>
-                <p className="research-meta">{p.venue} {p.year} · {p.status}</p>
-                {p.ccf&&<span className="rank-label">{p.ccf.label}</span>}
-              </div>
-            </NextLink>
-          </motion.div>)}
-        </AnimatePresence>
-      </motion.div>
+      <div className="home-research-grid">
+        {data.papers.filter(p=>p.featured).map(p=><NextLink className="research-entry" key={p.id} href={`/papers/#${p.id}`}>
+          <div className="research-page"><img src={p.preview.src} width={p.preview.width} height={p.preview.height} alt="" loading="lazy" decoding="async"/></div>
+          <div className="research-caption">
+            <h3>{p.short}<span className="entry-arrow" aria-hidden="true">↗</span></h3>
+            <p className="entry-meta">{p.venue} {p.year} · {p.status}</p>
+            {p.ccf&&<p className="entry-rank">{p.ccf.label}</p>}
+          </div>
+        </NextLink>)}
+      </div>
     </Section>
     <Section id="press">
-      <div className="press-strip">
-        <div className="section-heading"><Heading as="h2" variant="section-title">Press</Heading><Link as={NextLink} href="/press/" className="text-link">All coverage ↗</Link></div>
-        <div className="press-outlets">
-          <Link href={data.press[0].url}><strong className="outlet-cctv">CCTV-1</strong><span aria-hidden="true">↗</span></Link>
-          <Link href={data.press[11].url}><strong>People’s Daily</strong><span aria-hidden="true">↗</span></Link>
-          <Link href={data.press[1].url}><strong>China News Service</strong><span aria-hidden="true">↗</span></Link>
-          <Link href={data.press[6].url}><strong>People.cn</strong><span aria-hidden="true">↗</span></Link>
-        </div>
+      <div className="section-heading"><Heading as="h2" variant="section-title">Press</Heading><Link as={NextLink} href="/press/" className="text-link">All coverage ↗</Link></div>
+      <div className="home-press-list">
+        <Link href={data.press[0].url}>CCTV-1 <span aria-hidden="true">↗</span></Link>
+        <Link href={data.press[11].url}>People’s Daily <span aria-hidden="true">↗</span></Link>
+        <Link href={data.press[1].url}>China News Service <span aria-hidden="true">↗</span></Link>
+        <Link href={data.press[6].url}>People.cn <span aria-hidden="true">↗</span></Link>
       </div>
     </Section>
-    <Section>
-      <div className="home-bottom">
-        <div className="news-panel">
-          <div className="section-heading"><Heading as="h2" variant="section-title">Latest</Heading><Link as={NextLink} href="/about/#timeline" className="text-link">Timeline ↗</Link></div>
-          <ul className="news-list">
-            <li><time>Nov 2026</time><span>Two papers accepted at <Link href="/papers/#safeplanner">IEEE GLOBECOM 2026</Link>.</span></li>
-            <li><time>Nov 2026</time><span><Link href="/papers/#contractskill">ContractSkill</Link> at ACM MM (Poster); <Link href="/papers/#speech-screening">speech screening</Link> at NCMMSC (Oral).</span></li>
-            <li><time>Aug 2026</time><span>Our project in <Link href={data.milestones[1].links['Read feature']}>People’s Daily Overseas Edition</Link>.</span></li>
-          </ul>
-        </div>
-        <NextLink className="field-note" href="/works/">
-          <div className="field-note-image"><img src="/assets/forget-me-not.jpg" width="600" height="400" loading="lazy" alt="The Forget-Me-Not team presenting its community health project"/><span aria-hidden="true">↗</span></div>
-          <div><h3>Forget-Me-Not</h3><p>Speech AI for community health care.</p></div>
-        </NextLink>
-      </div>
+    <Section id="latest">
+      <div className="section-heading"><Heading as="h2" variant="section-title">Latest</Heading><Link as={NextLink} href="/about/#timeline" className="text-link">Timeline ↗</Link></div>
+      <ul className="editorial-news">
+        <li><time>Nov 2026</time><p>Two papers accepted at <Link href="/papers/#safeplanner">IEEE GLOBECOM 2026</Link>.</p></li>
+        <li><time>Nov 2026</time><p><Link href="/papers/#contractskill">ContractSkill</Link> at ACM MM (Poster); <Link href="/papers/#speech-screening">speech screening</Link> at NCMMSC (Oral).</p></li>
+        <li><time>Aug 2026</time><p>Featured in <Link href={data.milestones[1].links['Read feature']}>People’s Daily Overseas Edition</Link>.</p></li>
+      </ul>
     </Section>
   </Article>
 }

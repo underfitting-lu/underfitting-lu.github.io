@@ -7,8 +7,8 @@ import data from '../content.json'
 
 export default function About() {
   return <Article title="About"><Heading as="h1" className="page-title" mb={7}>About me<span className="name-dot">.</span></Heading>
-    <Section><p>I’m Zijian Lu (陆梓健), a Communication Engineering undergraduate at <Link href={data.organizations.university}>Nanjing University of Posts and Telecommunications</Link>.</p>
-      <p className="paragraph-gap">At <Link href={data.organizations.group}>MICS</Link>, I work on agents, speech, and perception. I also help build <Link href={data.organizations.company}>Forget-Me-Not</Link>, connecting research with community health care.</p>
+    <Section><p>I’m Zijian Lu (陆梓健), a third-year Communication Engineering undergraduate at <Link href={data.organizations.university}>Nanjing University of Posts and Telecommunications</Link>.</p>
+      <p className="paragraph-gap">At <Link href={data.organizations.group}>MICS</Link>, I work on agents, speech, and perception. I’m also a co-founder of <Link href={data.organizations.company}>Shouyi Technology / Forget-Me-Not</Link>, building voice AI for screening and companionship in Alzheimer’s disease, depression, Parkinson’s disease, and related conditions.</p>
       <div className="social-links"><Link href={`mailto:${data.email}`}>Email ↗</Link><Link href="/assets/Zijian_Lu_CV.pdf">CV ↗</Link><Link href={data.organizations.recruitment}>MICS speech group ↗</Link></div>
     </Section>
     <Section><Heading as="h2" variant="section-title">Education</Heading><BioSection><BioYear>2024</BioYear>— 2028 (expected)<br/><Link href={data.organizations.school}>B.Eng. in Communication Engineering, NJUPT</Link></BioSection></Section>

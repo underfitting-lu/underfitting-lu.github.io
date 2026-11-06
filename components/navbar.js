@@ -20,7 +20,6 @@ export default function Navbar({ path }) {
   }, [])
   return <nav aria-label="Main navigation" className={`site-nav${scrolled?' is-scrolled':''}`}>
     <Link as={NextLink} href="/" className="wordmark" color="inherit" aria-label="Zijian Lu home">
-      <svg viewBox="0 0 32 32" width="28" height="28" fill="none" aria-hidden="true"><path d="M16 3v26M3 16h26M7 7l18 18M7 25 25 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round"/></svg>
       <span>Zijian Lu</span>
     </Link>
     <div className="desktop-nav">

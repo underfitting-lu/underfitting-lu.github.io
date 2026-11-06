@@ -14,11 +14,11 @@ built with Next.js, Chakra UI, Framer Motion, and Three.js. The workbench and SV
 research illustrations are original. The original voxel dog is not used.
 See LICENSE and THIRD_PARTY_NOTICES.md.
 
-The current UI is inspired by Kimi's neutral workspace surfaces: an original
-floating navigation, cool-blue research workbench, responsive research cards,
-and animated topic filters. The home and papers filters use shared pill controls;
-page entrance, scroll reveal, and card transitions respect reduced-motion
-preferences. Content remains visible in the static HTML without JavaScript.
+The homepage uses an original monochrome optical line field, restrained editorial
+typography, and real paper-page previews. The SVG is constructed from continuous,
+non-crossing curves with calm regions for the identity and research text. It needs
+no JavaScript or WebGL to display. Page entrance, scroll reveal, and the papers
+filter respect reduced-motion preferences. Content remains visible in static HTML.
 
 Use Node.js 24. Run `npm ci`, then `npm run dev`. For production,
 run `npm run build` and `npm run preview` (http://127.0.0.1:3000).
@@ -29,10 +29,12 @@ GitHub Actions builds and deploys only the static `out/` directory to GitHub Pag
 - `content.json`: publications, typed dates, upcoming conferences, sourced milestones,
   selected honors, and the press archive.
 - `pages/`: home, papers, works, press, and about pages.
-- `components/`: navigation, layouts, and the original procedural 3D workbench.
+- `components/`: navigation and page layouts; an earlier original procedural
+  3D workbench remains in source and is no longer loaded by the homepage.
 - `lib/theme.js` and `styles/site.css`: appearance and responsive styles.
 - `public/assets/`: selected public-facing photos and the CV PDF.
 - `public/assets/paper-previews/`: first-page WebP renders of the eight listed papers.
+- `public/assets/research-field.svg`: original continuous line-field artwork.
 - `public/fonts/`: retained template font and its license; the current UI uses system fonts.
 - `public/publications.bib`: downloadable citations.
 
@@ -52,6 +54,10 @@ No analytics, API key, or runtime server is required.
 
 ## Content sources
 
+- The owner confirmed on 6 November 2026 that he is a third-year undergraduate
+  and a co-founder of Shouyi Technology. The Works description follows his stated
+  AI / Voice for Health scope: screening and companionship across Alzheimer’s
+  disease, depression, Parkinson’s disease, and related conditions.
 - On 6 November 2026, the Press archive was populated with all 20 entries listed
   in [the Forget-Me-Not newsroom](https://www.wuwangwo.top/#progress), preserving
   the linked articles, original headlines, publishers, and available date precision.

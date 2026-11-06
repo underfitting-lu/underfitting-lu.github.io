@@ -10,7 +10,7 @@ export default function Main({ children, router }) {
     <Head>
       <title>Zijian Lu — Agent, Speech & Perception</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
-      <meta name="description" content="Zijian Lu, an undergraduate at NJUPT. Research in agents, speech, and perception, grounded in machine learning, LLMs, and representations." />
+      <meta name="description" content="Zijian Lu, a third-year undergraduate at NJUPT. Research in agents, speech, and perception, grounded in machine learning, LLMs, and representations." />
       <meta name="author" content="Zijian Lu" />
       <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
       <link rel="canonical" href={`https://underfitting-lu.github.io${path}`} />
