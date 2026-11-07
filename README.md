@@ -14,11 +14,11 @@ built with Next.js, Chakra UI, Framer Motion, and Three.js. The workbench and SV
 research illustrations are original. The original voxel dog is not used.
 See LICENSE and THIRD_PARTY_NOTICES.md.
 
-The homepage uses an original monochrome optical line field, restrained editorial
-typography, and real paper-page previews. The SVG is constructed from continuous,
-non-crossing curves with calm regions for the identity and research text. It needs
-no JavaScript or WebGL to display. Page entrance, scroll reveal, and the papers
-filter respect reduced-motion preferences. Content remains visible in static HTML.
+The homepage uses an original animated blue landscape of mountains, a river,
+and open water, with fine lines connecting acoustic perception to the natural
+world. A static artwork remains visible before the animation loads. The artwork,
+page entrance, scroll reveal, and papers filter respect reduced-motion preferences.
+Identity, research text, and links remain visible in static HTML.
 
 Use Node.js 24. Run `npm ci`, then `npm run dev`. For production,
 run `npm run build` and `npm run preview` (http://127.0.0.1:3000).
@@ -35,6 +35,10 @@ GitHub Actions builds and deploys only the static `out/` directory to GitHub Pag
 - `public/assets/`: selected public-facing photos and the CV PDF.
 - `public/assets/paper-previews/`: first-page WebP renders of the eight listed papers.
 - `public/assets/research-field.svg`: original continuous line-field artwork.
+- `components/sound-landscape.js` and `lib/sound-landscape.mjs`: the current landscape
+  animation, paused when offscreen and disabled for reduced-motion preferences.
+- `public/assets/sound-landscape.svg`: matching static landscape for initial load
+  and browsers without Canvas support.
 - `public/fonts/`: retained template font and its license; the current UI uses system fonts.
 - `public/publications.bib`: downloadable citations.
 

@@ -9,10 +9,10 @@ The application structure, section convention, and biography component are adapt
 from that project. A visible credit links to https://www.craftz.dog/.
 
 The earlier interface took visual inspiration from Kimi's neutral workspace
-(https://www.kimi.com/). The current homepage uses an original AI-generated
-blue optical line illustration of a person listening to the world, created
-with OpenAI image generation, and an editorial layout informed by the owner's
-visual reference. The reference image itself is not copied into the website.
+(https://www.kimi.com/). The current homepage uses an original procedural blue
+line landscape with animated water and acoustic ripples, and an editorial layout
+informed by the owner's visual reference. The reference image itself is not
+copied into the website.
 No Kimi logos, source code, or proprietary graphic assets are used.
 
 The original voxel dog, photographs, newsletter, store integration, analytics,
