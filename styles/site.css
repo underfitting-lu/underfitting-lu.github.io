@@ -396,8 +396,8 @@ button {touch-action:manipulation}
  .press-meta {font-size:11px;gap:4px 9px}
  .press-row h2 {font-size:15px;line-height:1.8}
  .field-hero {min-height:596px;aspect-ratio:auto}
- .field-visual {inset:96px -50% 72px}
- .field-visual img {object-fit:cover;object-position:50% 50%}
+ .field-visual {inset:96px -32% 80px;mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 82%,transparent)}
+ .field-visual img {object-fit:cover;object-position:70% 50%}
  .field-intro {left:24px;right:24px;top:27px}
  .field-kicker {font-size:11px;line-height:1.7;max-width:270px}
  .field-kicker span {padding:0 5px}

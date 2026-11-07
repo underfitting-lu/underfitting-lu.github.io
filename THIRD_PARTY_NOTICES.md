@@ -9,15 +9,16 @@ The application structure, section convention, and biography component are adapt
 from that project. A visible credit links to https://www.craftz.dog/.
 
 The earlier interface took visual inspiration from Kimi's neutral workspace
-(https://www.kimi.com/). The current homepage uses an original blue SVG
-optical line field and an editorial layout, informed by the owner's visual
-reference. The reference image itself is not copied into the website.
+(https://www.kimi.com/). The current homepage uses an original AI-generated
+blue optical line illustration of a person listening to the world, created
+with OpenAI image generation, and an editorial layout informed by the owner's
+visual reference. The reference image itself is not copied into the website.
 No Kimi logos, source code, or proprietary graphic assets are used.
 
 The original voxel dog, photographs, newsletter, store integration, analytics,
 and personal content are not used. The research workbench is an original
 procedural Three.js scene retained in source; it is no longer loaded by the
-homepage. The line field and research illustrations are original SVGs.
+homepage. The previous line field and research illustrations are original SVGs.
 
 The template's M PLUS Rounded 1c Latin subset from @fontsource is retained,
 under the SIL Open Font License in public/fonts/OFL.txt. The current interface

@@ -8,7 +8,7 @@ import data from '../content.json'
 export default function Home() {
   return <Article>
     <section className="field-hero" aria-labelledby="home-title">
-      <div className="field-visual" aria-hidden="true"><img src="/assets/research-field.svg" width="1400" height="820" alt="" fetchPriority="high" decoding="async" /></div>
+      <div className="field-visual" aria-hidden="true"><img src="/assets/sound-world.webp" width="1635" height="962" alt="" fetchPriority="high" decoding="async" /></div>
       <div className="field-intro">
         <p className="field-kicker"><Link href={data.organizations.university}>Nanjing University of Posts and Telecommunications</Link></p>
         <Heading as="h1" id="home-title">Zijian Lu</Heading>
